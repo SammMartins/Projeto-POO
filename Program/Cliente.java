@@ -1,4 +1,4 @@
-package Projeto_POO.Program;
+package Program;
 
 public class Cliente {
     
