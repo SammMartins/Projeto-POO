@@ -4,8 +4,8 @@ import javax.swing.*;
 
 
 public class Tela extends JFrame{
-    public ImageIcon iconInsert = new ImageIcon("Java/Projeto_POO/Images/insert.png");
-    public ImageIcon iconConfig = new ImageIcon("Java/Projeto_POO/Images/config.png");
+    public ImageIcon iconInsert = new ImageIcon("Images/insert.png");
+    public ImageIcon iconConfig = new ImageIcon("Images/config.png");
 
     public Color corFundo1 = new Color(10,25,50);
     public Color corLabel1 = new Color(206,222,250);
