@@ -12,7 +12,7 @@ public class TelaMain extends Tela{
 
         JLabel labelRegistro = new JLabel();
         labelRegistro.setText("Novo Registro");
-        labelRegistro.setForeground(new Color(0,0,205));
+        labelRegistro.setForeground(corLabel1);
         labelRegistro.setBounds(180, 40,100 ,100);
         labelRegistro.setFont(new Font("Arial Black", Font.PLAIN, 12));
         labelRegistro.setVisible(true);
@@ -20,7 +20,7 @@ public class TelaMain extends Tela{
 
         JLabel sublabelRegistro = new JLabel();
         sublabelRegistro.setText("Inserir um novo resgistro ao cadastro.");
-        sublabelRegistro.setForeground(new Color(79,79,79));
+        sublabelRegistro.setForeground(corLabel2);
         sublabelRegistro.setBounds(180, 60,300 ,100);
         sublabelRegistro.setFont(new Font("Arial", Font.PLAIN, 11));
         sublabelRegistro.setVisible(true);
@@ -31,7 +31,7 @@ public class TelaMain extends Tela{
 
         JLabel labelManu = new JLabel();
         labelManu.setText("Matutenção de Registro");
-        labelManu.setForeground(new Color(0,0,205));
+        labelManu.setForeground(corLabel1);
         labelManu.setBounds(180, 160,250,100);
         labelManu.setFont(new Font("Arial Black", Font.PLAIN, 12));
         labelManu.setVisible(true);
@@ -40,7 +40,7 @@ public class TelaMain extends Tela{
         JLabel sublabelManu = new JLabel();
         
         sublabelManu.setText("ola bom dia me diz que eu sou um erro");
-        sublabelManu.setForeground(new Color(79,79,79));
+        sublabelManu.setForeground(corLabel2);
         sublabelManu.setBounds(180, 180,300 ,100);
         sublabelManu.setFont(new Font("Arial", Font.PLAIN, 11));
         sublabelManu.setVisible(true);

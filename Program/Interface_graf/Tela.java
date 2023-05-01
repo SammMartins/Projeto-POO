@@ -2,7 +2,11 @@ package Program.Interface_graf;
 import java.awt.*;
 import javax.swing.*;
 
+
 public class Tela extends JFrame{
+    public Color corFundo1 = new Color(10,25,50);
+    public Color corLabel1 = new Color(206,222,250);
+    public Color corLabel2 = new Color(200,200,200);
     
     public Tela(){
         setTitle("");
@@ -12,7 +16,7 @@ public class Tela extends JFrame{
         setResizable(false);              //impossibilita o redimensionamento da tela.
         setLocationRelativeTo(null);             //configura a localização de nascimento da tela
         setLayout(null);                  //"reseta" o layout da tela.
-        getContentPane().setBackground(new Color(220,230,236));
+        getContentPane().setBackground(corFundo1);
 
         /*                          Forma Alternativa
         *JFrame jFrame = new JFrame("Tela 1");//criamos um objeto tela com o titulo Tela 1.
