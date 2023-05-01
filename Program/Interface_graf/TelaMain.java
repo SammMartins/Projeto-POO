@@ -52,11 +52,13 @@ public class TelaMain extends Tela{
         JButton novoRegistro = new JButton();
         novoRegistro.setBounds(70, 70, 75, 75);
         novoRegistro.setVisible(true);
+        novoRegistro.setIcon(iconInsert);
         this.add(novoRegistro);
 
         JButton manuntencaoRegistro = new JButton();
         manuntencaoRegistro.setBounds(70, 190, 75, 75);
         manuntencaoRegistro.setVisible(true);
+        manuntencaoRegistro.setIcon(iconConfig);
         this.add(manuntencaoRegistro);
 
        
