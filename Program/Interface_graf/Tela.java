@@ -4,12 +4,12 @@ import javax.swing.*;
 
 
 public class Tela extends JFrame{
-    public ImageIcon iconInsert = new ImageIcon("Images/insert.png");
-    public ImageIcon iconConfig = new ImageIcon("Images/config.png");
+    public ImageIcon iconInsert = new ImageIcon("Images/insert.png"); //criando o objeto que recebe a imagem do insert
+    public ImageIcon iconConfig = new ImageIcon("Images/config.png"); //criando o objeto que recebe a imagem do insert
 
-    public Color corFundo1 = new Color(10,25,50);
-    public Color corLabel1 = new Color(206,222,250);
-    public Color corLabel2 = new Color(200,200,200);
+    public Color corFundo1 = new Color(10,25,50);          //definindo a cor de fundo em um objeto
+    public Color corLabel1 = new Color(206,222,250);    //definindo a cor de fundo em um objeto
+    public Color corLabel2 = new Color(200,200,200); //definindo a cor de fundo em um objeto
     
     public Tela(){
         setTitle("");
