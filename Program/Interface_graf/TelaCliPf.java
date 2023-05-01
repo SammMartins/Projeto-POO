@@ -14,6 +14,8 @@ public class TelaCliPf extends Tela {
     
     public TelaCliPf(){
         
+
+        //Label com o texto "NOME:"
         JLabel labelNome = new JLabel(); 
         labelNome.setText("Nome:");
         labelNome.setBounds(30, 66, 70, 70);
@@ -21,12 +23,16 @@ public class TelaCliPf extends Tela {
         labelNome.setVisible(true);
         this.add(labelNome);
         
+
+        //Caixa para inserir o nome
         JTextField textName = new JTextField(); 
         textName.setBounds(170, 90, 300, 25);
         textName.setFont(new Font("Arial", Font.ITALIC, 12));
         textName.setVisible(true);
         this.add(textName);
         
+
+        //Labell com o texto "CPF:"
         JLabel labelCPF = new JLabel(); 
         labelCPF.setText("CPF:");
         labelCPF.setBounds(30, 100, 70, 70);
@@ -34,14 +40,14 @@ public class TelaCliPf extends Tela {
         labelCPF.setVisible(true);
         this.add(labelCPF);
 
-        
+        //Caixa para inserir o CPF
         JTextField textCPF = new JTextField(); 
         textCPF.setBounds(170, 120, 300, 25);
         textCPF.setFont(new Font("Arial", Font.ITALIC, 12));
         textCPF.setVisible(true);
         add(textCPF);      
 
-
+        //Label com o texto "CELULAR:"
         JLabel labelCelular = new JLabel(); 
         labelCelular.setText("CELULAR:");
         labelCelular.setBounds(30, 134, 70, 70);
@@ -49,7 +55,7 @@ public class TelaCliPf extends Tela {
         labelCelular.setVisible(true);
         this.add(labelCelular);
 
-
+        //Caixa para inserir o celular
         JTextField textCELULAR = new JTextField(); 
         textCELULAR.setBounds(170, 150, 300, 25);
         textCELULAR.setFont(new Font("Arial", Font.ITALIC, 12));
