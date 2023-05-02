@@ -10,12 +10,13 @@ public class TelaMain extends Tela{
     public TelaMain(){
         setTitle("Gerenciar Clientes");
 
+
+
         JLabel labelRegistro = new JLabel();
         labelRegistro.setText("Novo Registro");
         labelRegistro.setForeground(corLabel1);
         labelRegistro.setBounds(180, 40,100 ,100);
         labelRegistro.setFont(new Font("Arial Black", Font.PLAIN, 12));
-        labelRegistro.setVisible(true);
         this.add(labelRegistro);
 
         JLabel sublabelRegistro = new JLabel();
@@ -23,8 +24,8 @@ public class TelaMain extends Tela{
         sublabelRegistro.setForeground(corLabel2);
         sublabelRegistro.setBounds(180, 60,300 ,100);
         sublabelRegistro.setFont(new Font("Arial", Font.PLAIN, 11));
-        sublabelRegistro.setVisible(true);
         this.add(sublabelRegistro);
+
 //-------------------------------------------------------------------------------------------
       
         
@@ -34,7 +35,6 @@ public class TelaMain extends Tela{
         labelManu.setForeground(corLabel1);
         labelManu.setBounds(180, 160,250,100);
         labelManu.setFont(new Font("Arial Black", Font.PLAIN, 12));
-        labelManu.setVisible(true);
         this.add(labelManu);
 
         JLabel sublabelManu = new JLabel();
@@ -43,22 +43,19 @@ public class TelaMain extends Tela{
         sublabelManu.setForeground(corLabel2);
         sublabelManu.setBounds(180, 180,300 ,100);
         sublabelManu.setFont(new Font("Arial", Font.PLAIN, 11));
-        sublabelManu.setVisible(true);
         this.add(sublabelManu);
 
 
         
-    //-------------------------------------------------------------------------------    
+//-------------------------------------------------------------------------------    
         JButton novoRegistro = new JButton();
         novoRegistro.setBounds(70, 70, 75, 75);
-        novoRegistro.setVisible(true);
         novoRegistro.setIcon(iconInsert);
         this.add(novoRegistro);
 
         JButton manuntencaoRegistro = new JButton();
-        manuntencaoRegistro.setBounds(70, 190, 75, 75);
-        manuntencaoRegistro.setVisible(true);
         manuntencaoRegistro.setIcon(iconConfig);
+        manuntencaoRegistro.setBounds(70, 190, 75, 75);
         this.add(manuntencaoRegistro);
 
        
