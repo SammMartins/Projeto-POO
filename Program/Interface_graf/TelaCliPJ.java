@@ -42,5 +42,21 @@ public class TelaCliPj extends Tela {
         jtfCnpj.setFont(new Font("Arial", Font.ITALIC, 12));
         this.add(jtfCnpj);
 
+        //------------------------------------------------------------------
+
+        //Label E-mail
+        JLabel lEmail = new JLabel();
+        lEmail.setText("E-MAIL");
+        lEmail.setBounds(25, 88, 120, 70);
+        lEmail.setForeground(corLabel1);
+        lEmail.setFont(new Font("Arial Black", Font.BOLD, 15));
+        this.add(lEmail);
+
+        //TextArea E-mail
+        JTextField jtfEmail = new JTextField();
+        jtfEmail.setBounds(170, 110, 300, 25);
+        jtfEmail.setFont(new Font("Arial", Font.ITALIC, 12));
+        this.add(jtfEmail);
+
     }
 }
