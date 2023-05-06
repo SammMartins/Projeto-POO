@@ -4,8 +4,9 @@ public class Start  {
 
     public static void main(String[] args) {
         TelaMain tela_main = new TelaMain();
-        TelaCliPj tela_pj = new TelaCliPj();
-        //new TelaCliPf();
-        
+        TelaCliPJ tela_pj = new TelaCliPJ();
+        TelaCliPf tela_pf = new TelaCliPf();
+
+        //new TelaCliPf();   
     }
 }

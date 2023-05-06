@@ -5,9 +5,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.*;
 
-public class TelaCliPj extends Tela {
+public class TelaCliPJ extends Tela {
     
-    public TelaCliPj(){
+    public TelaCliPJ(){
         this.setTitle("Cadastro Pessoa Jurídica");
         
 //------------------------------------------------------------------\\
@@ -89,6 +89,15 @@ public class TelaCliPj extends Tela {
         jtfResponsavelLegal.setBounds(170, 170, 300, 25);
         jtfResponsavelLegal.setFont(new Font("Arial", Font.ITALIC, 12));
         this.add(jtfResponsavelLegal);
+
+        //------------------------
+//              Criação de botoes
+
+        JButton cadastro = new JButton("Cadastrar");
+        cadastro.setVisible(true);
+        cadastro.setName("Cadastrar");
+        cadastro.setBounds(190, 250, 100, 50);
+        this.add(cadastro);
 
     }
 }

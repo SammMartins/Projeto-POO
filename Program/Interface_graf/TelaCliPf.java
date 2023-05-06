@@ -60,7 +60,17 @@ public class TelaCliPf extends Tela {
         textCELULAR.setBounds(170, 150, 300, 25);
         textCELULAR.setFont(new Font("Arial", Font.ITALIC, 12));
         textCELULAR.setVisible(true);
-        this.add(textCELULAR);     
+        this.add(textCELULAR);   
+        
+        //--------------------------------------------------
+
+        //Criação do botão de cadastro
+
+        JButton cadastro = new JButton("Cadastrar");
+        cadastro.setVisible(true);
+        cadastro.setName("Cadastrar");
+        cadastro.setBounds(190, 250, 100, 50);
+        this.add(cadastro);
     }
     
         
