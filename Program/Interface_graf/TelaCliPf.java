@@ -1,18 +1,21 @@
 package Program.Interface_graf;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.*;
 import javax.swing.JTextField;
 import java.awt.*;
 
-public class TelaCliPf extends Tela {
+public class TelaCliPf extends Tela implements ActionListener {
   
-
-        
+    JButton salvar = new JButton();
+    JButton voltar = new JButton();    
     
-    public TelaCliPf(){
+    public void telaCliPf(){
         
 
         //Label com o texto "NOME:"
@@ -66,11 +69,26 @@ public class TelaCliPf extends Tela {
 
         //Criação do botão de cadastro
 
-        JButton cadastro = new JButton("Cadastrar");
-        cadastro.setVisible(true);
-        cadastro.setName("Cadastrar");
-        cadastro.setBounds(190, 250, 100, 50);
-        this.add(cadastro);
+        salvar.setVisible(true);
+        salvar.setText("Salvar");
+        salvar.setBounds(185, 250, 120, 40);
+        salvar.setIcon(iconSave);
+        salvar.setHorizontalAlignment(SwingConstants.CENTER);
+        this.add(salvar);
+
+        
+        voltar.setIcon(iconBack);
+        voltar.setBounds(10, 10, 40, 30);
+        voltar.addActionListener(this);
+        this.add(voltar);
+    }
+ //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == voltar){
+            this.dispose();
+            TelaCli telaCli = new TelaCli();
+            telaCli.telaCli();     
+       }
     }
     
         

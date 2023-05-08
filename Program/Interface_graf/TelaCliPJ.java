@@ -1,12 +1,16 @@
 package Program.Interface_graf;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.*;
 
-public class TelaCliPJ extends Tela {
-    
+public class TelaCliPJ extends Tela implements ActionListener {
+    JButton voltar = new JButton();
+    JButton salvar = new JButton("Salvar");
     public TelaCliPJ(){
         this.setTitle("Cadastro Pessoa Jurídica");
         
@@ -93,11 +97,24 @@ public class TelaCliPJ extends Tela {
         //------------------------
 //              Criação de botoes
 
-        JButton cadastro = new JButton("Cadastrar");
-        cadastro.setVisible(true);
-        cadastro.setName("Cadastrar");
-        cadastro.setBounds(190, 250, 100, 50);
-        this.add(cadastro);
+        
+        salvar.setVisible(true);
+        salvar.setBounds(185, 250, 120, 40);
+        salvar.setIcon(iconSave);
+        salvar.setHorizontalAlignment(SwingConstants.CENTER);
+        this.add(salvar);
 
+        voltar.setIcon(iconBack);
+        voltar.setBounds(10, 10, 40, 30);
+        voltar.addActionListener(this);
+        this.add(voltar);        
     }
+ //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
+public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == voltar){
+                this.dispose();
+                TelaCli telaCli = new TelaCli();
+                telaCli.telaCli();
+        }
+}
 }
