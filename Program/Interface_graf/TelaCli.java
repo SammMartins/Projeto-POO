@@ -46,7 +46,7 @@ public class TelaCli extends Tela implements ActionListener{
         this.add(PJ);
 
         voltar.setIcon(iconBack);
-        voltar.setBounds(10, 10, 40, 30);
+        voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
       

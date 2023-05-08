@@ -13,8 +13,9 @@ public class Tela extends JFrame{
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
     //------------------------Criação de Cores-----------------------------------------------------------
-    public Color corFundo1 = new Color(10,25,50);         //definindo a cor de fundo em um objeto
-    public Color corLabel1 = new Color(206,222,250);     //definindo a cor de fundo em um objeto
+    public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
+    public Color corPanel = new Color(15, 76, 117);
+    public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
     public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
     
     public Tela(){
@@ -27,5 +28,12 @@ public class Tela extends JFrame{
         setLocationRelativeTo(null);               //configura a localização de nascimento da tela
         setLayout(null);                    //"reseta" o layout da tela.
         getContentPane().setBackground(corFundo1); //Define cor de fundo da tela.  
+
+        JPanel panel = new JPanel();
+        panel.setBackground(corPanel);
+        panel.setVisible(true);
+        panel.setBounds(0, 0, 1000, 60);
+        this.add(panel);
     }
+    
 }
