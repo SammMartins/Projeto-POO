@@ -16,7 +16,7 @@ public class TelaCliPf extends Tela implements ActionListener {
     JButton voltar = new JButton();    
     
     public void telaCliPf(){
-        
+        setTitle("Gerenciar Pessoa Física");
 
         //Label com o texto "NOME:"
         JLabel labelNome = new JLabel(); 
