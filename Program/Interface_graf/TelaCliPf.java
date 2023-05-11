@@ -45,14 +45,14 @@ public class TelaCliPf extends Tela implements ActionListener {
 
         //Caixa para inserir o CPF
         JTextField textCPF = new JTextField(); 
-        textCPF.setBounds(170, 120, 300, 25);
+        textCPF.setBounds(170, 124, 300, 25);
         textCPF.setFont(new Font("Arial", Font.ITALIC, 12));
         textCPF.setVisible(true);
         add(textCPF);      
 
         //Label com o texto "CELULAR:"
         JLabel labelCelular = new JLabel(); 
-        labelCelular.setText("CELULAR:");
+        labelCelular.setText("Celular:");
         labelCelular.setBounds(30, 134, 70, 70);
         labelCelular.setForeground(corLabel1);
         labelCelular.setVisible(true);
@@ -60,7 +60,7 @@ public class TelaCliPf extends Tela implements ActionListener {
 
         //Caixa para inserir o celular
         JTextField textCELULAR = new JTextField(); 
-        textCELULAR.setBounds(170, 150, 300, 25);
+        textCELULAR.setBounds(170, 158, 300, 25);
         textCELULAR.setFont(new Font("Arial", Font.ITALIC, 12));
         textCELULAR.setVisible(true);
         this.add(textCELULAR);   

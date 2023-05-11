@@ -63,7 +63,7 @@ public class TelaCli extends Tela implements ActionListener{
        }
        if(e.getSource() == PJ){
             this.dispose();
-            TelaCliPj telaPJ = new TelaCliPj();
+            TelaCliPJ telaPJ = new TelaCliPJ();
             telaPJ.setVisible(true);
        }
        if(e.getSource() == voltar){

@@ -8,25 +8,25 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.*;
 
-public class TelaCliPj extends Tela implements ActionListener {
+public class TelaCliPJ extends Tela implements ActionListener {
     JButton voltar = new JButton();
     JButton salvar = new JButton("Salvar");
-    public TelaCliPj(){
+    public TelaCliPJ(){
         this.setTitle("Cadastro Pessoa Jurídica");
         
 //------------------------------------------------------------------\\
 
         //Label Razão Social
         JLabel lRazao = new JLabel();
-        lRazao.setText("Razão Social");
-        lRazao.setBounds(25, 45, 120, 70);
-        lRazao.setForeground(corLabel2);
-        lRazao.setFont(new Font("Arial Black", Font.BOLD, 15));
+        lRazao.setText("Razão Social:");
+        lRazao.setBounds(30, 66, 300, 70);
+        lRazao.setForeground(corLabel1);
+       
         this.add(lRazao);
 
         //TextArea Razão Social
         JTextField jtfRazao = new JTextField();
-        jtfRazao.setBounds(170, 67, 300, 25);
+        jtfRazao.setBounds(170, 90, 300, 25);
         jtfRazao.setFont(new Font("Arial", Font.ITALIC, 12));
         this.add(jtfRazao);
 
@@ -34,15 +34,15 @@ public class TelaCliPj extends Tela implements ActionListener {
 
         //Label CNPJ
         JLabel lCnpj = new JLabel();
-        lCnpj.setText("CNPJ");
-        lCnpj.setBounds(25, 75, 120, 70);
-        lCnpj.setForeground(corLabel2);
-        lCnpj.setFont(new Font("Arial Black", Font.BOLD, 15));
+        lCnpj.setText("CNPJ:");
+        lCnpj.setBounds(30, 100, 120, 70);
+        lCnpj.setForeground(corLabel1);
+        
         this.add(lCnpj);
 
         //TextArea CNPJ
         JTextField jtfCnpj = new JTextField();
-        jtfCnpj.setBounds(170, 97, 300, 25);
+        jtfCnpj.setBounds(170, 124, 300, 25);
         jtfCnpj.setFont(new Font("Arial", Font.ITALIC, 12));
         this.add(jtfCnpj);
 
@@ -50,15 +50,15 @@ public class TelaCliPj extends Tela implements ActionListener {
 
         //Label E-mail
         JLabel lEmail = new JLabel();
-        lEmail.setText("E-MAIL");
-        lEmail.setBounds(25, 105, 120, 70);
-        lEmail.setForeground(corLabel2);
-        lEmail.setFont(new Font("Arial Black", Font.BOLD, 15));
+        lEmail.setText("E-mail:");
+        lEmail.setBounds(30, 130, 120, 70);
+        lEmail.setForeground(corLabel1);
+       
         this.add(lEmail);
 
         //TextArea E-mail
         JTextField jtfEmail = new JTextField();
-        jtfEmail.setBounds(170, 127, 300, 25);
+        jtfEmail.setBounds(170, 158, 300, 25);
         jtfEmail.setFont(new Font("Arial", Font.ITALIC, 12));
         this.add(jtfEmail);
 
@@ -66,15 +66,15 @@ public class TelaCliPj extends Tela implements ActionListener {
 
         //Label Contato
         JLabel lContato = new JLabel();
-        lContato.setText("Contato");
-        lContato.setBounds(25, 135, 120, 70);
-        lContato.setForeground(corLabel2);
-        lContato.setFont(new Font("Arial Black", Font.BOLD, 15));
+        lContato.setText("Contato:");
+        lContato.setBounds(30, 168, 120, 70);
+        lContato.setForeground(corLabel1);
+        
         this.add(lContato);
 
         //TextArea Contato
         JTextField jtfContato = new JTextField();
-        jtfContato.setBounds(170, 157, 300, 25);
+        jtfContato.setBounds(170, 192, 300, 25);
         jtfContato.setFont(new Font("Arial", Font.ITALIC, 12));
         this.add(jtfContato);
 
@@ -82,15 +82,15 @@ public class TelaCliPj extends Tela implements ActionListener {
 
         //Label Responsável legal
         JLabel lResponsavelLegal = new JLabel();
-        lResponsavelLegal.setText("Responsável legal");
-        lResponsavelLegal.setBounds(25, 165, 120, 70);
-        lResponsavelLegal.setForeground(corLabel2);
-        lResponsavelLegal.setFont(new Font("Arial Black", Font.BOLD, 15));
+        lResponsavelLegal.setText("Responsável legal:");
+        lResponsavelLegal.setBounds(30, 202, 300, 70);
+        lResponsavelLegal.setForeground(corLabel1);
+     
         this.add(lResponsavelLegal);
 
         //TextArea Responsável legal
         JTextField jtfResponsavelLegal = new JTextField();
-        jtfResponsavelLegal.setBounds(170, 187, 300, 25);
+        jtfResponsavelLegal.setBounds(170, 226, 300, 25);
         jtfResponsavelLegal.setFont(new Font("Arial", Font.ITALIC, 12));
         this.add(jtfResponsavelLegal);
 
@@ -99,7 +99,7 @@ public class TelaCliPj extends Tela implements ActionListener {
 
         
         salvar.setVisible(true);
-        salvar.setBounds(185, 250, 120, 40);
+        salvar.setBounds(175, 285, 120, 40);
         salvar.setIcon(iconSave);
         salvar.setHorizontalAlignment(SwingConstants.CENTER);
         this.add(salvar);
