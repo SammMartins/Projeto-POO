@@ -103,9 +103,13 @@ public class TelaMain extends JFrame implements ActionListener{
             telaCli.telaCli();
             telaCli.aberturaCli();
         }
-        if(e.getSource() == manuntencaoRegistro){ //Caso o botão de Manuntenção seja clicado.
-
-        }
-    }
-     
-}
+           
+            if (e.getSource() == manuntencaoRegistro) { //Caso o botão de Manuntenção seja clicado.
+                this.dispose();
+                TelaCliMT telaCliMT = new TelaCliMT();
+                telaCliMT.telaMT();
+                telaCliMT.aberturaCliMT();
+            }     
+         }
+  }
+ 
