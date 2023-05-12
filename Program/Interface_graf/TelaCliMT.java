@@ -34,14 +34,13 @@ public class TelaCliMT extends Tela implements ActionListener {
 //-------------------------------------------------------------------------------    
         
 
-  MTPF.setBounds(70, 70, 75, 75);
+        MTPF.setBounds(70, 70, 75, 75);
         MTPF.setIcon(iconPF);
         MTPF.addActionListener(this);
         this.add(MTPF);
 
-        
-        MTPJ.setIcon(iconPJ);
         MTPJ.setBounds(70, 190, 75, 75);
+        MTPJ.setIcon(iconPJ);
         MTPJ.addActionListener(this);
         this.add(MTPJ);
 
@@ -64,11 +63,12 @@ public void actionPerformed(ActionEvent e) {
     if(e.getSource() == MTPF){
          this.dispose();
          TelaCliMT_PF telaMTPF = new TelaCliMT_PF();
-         telaMTPF.telaCliMT_PF();
+         telaMTPF.telaMT_PF();
     }
     if(e.getSource() == MTPJ){
          this.dispose();
          TelaCliMT_PJ telaMTPJ = new TelaCliMT_PJ();
+         telaMTPJ.TelaMT_PJ();
          telaMTPJ.setVisible(true);
     }
     if(e.getSource() == voltar){
