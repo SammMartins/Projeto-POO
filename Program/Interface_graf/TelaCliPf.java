@@ -1,5 +1,5 @@
 package Program.Interface_graf;
-import java.awt.Color;
+//import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.*;
 import javax.swing.JTextField;
-import java.awt.*;
+//import java.awt.*;
 
 public class TelaCliPf extends Tela implements ActionListener {
   

@@ -24,7 +24,7 @@ public class TelaMain extends JFrame implements ActionListener{
     public ImageIcon iconPF = new ImageIcon("Images/PF.png");
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
-    //public ImageIcon iconLupa = new ImageIcon("Images/Lupa.png");
+    public ImageIcon iconLupa = new ImageIcon("Images/Lupa.png");
     //------------------------Criação de Cores-----------------------------------------------------------
     public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
     public Color corPanel = new Color(15, 76, 117);

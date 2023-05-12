@@ -1,6 +1,6 @@
 package Program.Interface_graf;
 
-import java.awt.Color;
+//import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,12 +9,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.*;
 import javax.swing.JTextField;
-import java.awt.*;
+//import java.awt.*;
 
 public class TelaCliMT_PJ extends Tela implements ActionListener{
     
   JButton voltar = new JButton();
-  JButton pesquisarpj = new JButton();
+  JButton pesquisarpj = new JButton(iconLupa);
     
   public void TelaMT_PJ(){
 

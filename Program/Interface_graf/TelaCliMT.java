@@ -1,7 +1,7 @@
 package Program.Interface_graf;
 
 import javax.swing.*;
-import javax.swing.plaf.RootPaneUI;
+//import javax.swing.plaf.RootPaneUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
