@@ -92,5 +92,11 @@ public class TelaCliMT_PF extends Tela implements ActionListener {
             TelaCliMT telaCliMT = new TelaCliMT();
             telaCliMT.telaMT();
         }
+
+        if (e.getSource() == pesquisarpf) {
+            this.dispose();
+            TelaTable table = new TelaTable();
+            table.openTelaTable();
+        }
     }
 }
