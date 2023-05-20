@@ -9,16 +9,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class TelaCliMT_PJ extends Tela implements ActionListener {
-    
+
     JButton voltar = new JButton();
     JButton pesquisarpj = new JButton(iconLupa);
-    
+
     public void TelaMT_PJ() {
         setTitle("Pesquisa Pessoa Jurídica");
         setLocationRelativeTo(null);
 
         // Label com o texto "PESQUISAR"
-        JLabel labelNome = new JLabel(); 
+        JLabel labelNome = new JLabel();
         labelNome.setText("PESQUISAR PJ: ");
         labelNome.setBounds(18, 70, 150, 70);
         labelNome.setFont(new Font("Arial Black", Font.BOLD, 15));
@@ -28,7 +28,7 @@ public class TelaCliMT_PJ extends Tela implements ActionListener {
         this.add(labelNome);
 
         // Caixa para inserir Pesquisa
-        JTextField textName = new JTextField(); 
+        JTextField textName = new JTextField();
         textName.setBounds(18, 120, 350, 30);
         textName.setFont(new Font("Arial", Font.ITALIC, 12));
         textName.setVisible(true);
@@ -53,10 +53,10 @@ public class TelaCliMT_PJ extends Tela implements ActionListener {
             telaCliMT.telaMT();
         }
 
-        if (e.getSource() == pesquisarpj){
+        if (e.getSource() == pesquisarpj) {
             this.dispose();
             TelaTable table = new TelaTable();
-            
+            table.openTelaTable();
         }
     }
 }

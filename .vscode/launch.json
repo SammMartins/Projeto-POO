@@ -9,6 +9,13 @@
             "name": "Start",
             "request": "launch",
             "mainClass": "Program.Interface_graf.Start",
+            "projectName": "Projeto_POO_2f032c1d"
+        },
+        {
+            "type": "java",
+            "name": "Start",
+            "request": "launch",
+            "mainClass": "Program.Interface_graf.Start",
             "projectName": "Projeto-POO_9276d4cf"
         },
         {

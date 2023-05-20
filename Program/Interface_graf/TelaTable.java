@@ -17,15 +17,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TelaTable extends Tela implements ActionListener {
+public class TelaTable extends Tela {
     private JTable table;
     private DefaultTableModel tableModel;
 
-    public TelaTable() {
+    public void telaTable() {
         setTitle("Resultado da Busca");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setVisible(true); 
         setSize(500, 400);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
@@ -45,5 +44,8 @@ public class TelaTable extends Tela implements ActionListener {
 
         pack();
         setLocationRelativeTo(null);
+    }
+    public void openTelaTable(){
+        setVisible(true);
     }
 }
