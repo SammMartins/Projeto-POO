@@ -52,5 +52,11 @@ public class TelaCliMT_PJ extends Tela implements ActionListener {
             TelaCliMT telaCliMT = new TelaCliMT();
             telaCliMT.telaMT();
         }
+
+        if (e.getSource() == pesquisarpj){
+            this.dispose();
+            TelaTable table = new TelaTable();
+            
+        }
     }
 }
