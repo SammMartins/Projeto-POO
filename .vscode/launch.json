@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Start",
+            "request": "launch",
+            "mainClass": "Program.Interface_graf.Start",
+            "projectName": "Projeto-POO_9276d4cf"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "textfield_suggestion.Main",

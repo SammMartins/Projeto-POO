@@ -5,14 +5,12 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.*;
 
-public class TelaCliPJ extends Tela implements ActionListener {
+public class TelaCliPj extends Tela implements ActionListener {
     JButton voltar = new JButton();
     JButton salvar = new JButton("Salvar");
-    public TelaCliPJ(){
+    public TelaCliPj(){
         this.setTitle("Cadastro Pessoa Jurídica");
         
 //------------------------------------------------------------------\\
