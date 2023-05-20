@@ -1,38 +1,34 @@
 package Program.Interface_graf;
 
 import javax.swing.*;
-//import javax.swing.plaf.RootPaneUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TelaCliMT extends Tela implements ActionListener {
 
-   JButton MTPF = new JButton();
-   JButton MTPJ = new JButton();
-   JButton voltar = new JButton();
+    JButton MTPF = new JButton();
+    JButton MTPJ = new JButton();
+    JButton voltar = new JButton();
 
-   public void telaMT(){
+    public void telaMT() {
+        setTitle("Tela de Manutenção");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-  setTitle("Tela de Manutenção");
-  setLocationRelativeTo(null);
-  
-  JLabel labelMTPF = new JLabel();
-  labelMTPF.setText("Pesquisar PF");
-  labelMTPF.setForeground(corLabel1);
-  labelMTPF.setBounds(180, 60,100 ,100);
-  labelMTPF.setFont(new Font("Arial Black", Font.PLAIN, 12));
-  this.add(labelMTPF);
+        JLabel labelMTPF = new JLabel();
+        labelMTPF.setText("Pesquisar PF");
+        labelMTPF.setForeground(corLabel1);
+        labelMTPF.setBounds(180, 60, 100, 100);
+        labelMTPF.setFont(new Font("Arial Black", Font.PLAIN, 12));
+        this.add(labelMTPF);
 
-  JLabel labelMTPJ = new JLabel();
-  labelMTPJ.setText("Pesquisar PJ");
-  labelMTPJ.setForeground(corLabel1);
-  labelMTPJ.setBounds(180, 170,250,100);
-  labelMTPJ.setFont(new Font("Arial Black", Font.PLAIN, 12));
-  this.add(labelMTPJ);
-
-//-------------------------------------------------------------------------------    
-        
+        JLabel labelMTPJ = new JLabel();
+        labelMTPJ.setText("Pesquisar PJ");
+        labelMTPJ.setForeground(corLabel1);
+        labelMTPJ.setBounds(180, 170, 250, 100);
+        labelMTPJ.setFont(new Font("Arial Black", Font.PLAIN, 12));
+        this.add(labelMTPJ);
 
         MTPF.setBounds(70, 70, 75, 75);
         MTPF.setIcon(iconPF);
@@ -48,37 +44,29 @@ public class TelaCliMT extends Tela implements ActionListener {
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
+    }
 
-   }
+    public void aberturaCliMT() {
+        this.setVisible(true);
+    }
 
-  
-   public void aberturaCliMT(){
-    this.setVisible(true); 
+    //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == MTPF) {
+            this.dispose();
+            TelaCliMT_PF telaMTPF = new TelaCliMT_PF();
+            telaMTPF.telaMT_PF();
+        }
+        if (e.getSource() == MTPJ) {
+            this.dispose();
+            TelaCliMT_PJ telaMTPJ = new TelaCliMT_PJ();
+            telaMTPJ.TelaMT_PJ();
+            telaMTPJ.setVisible(true);
+        }
+        if (e.getSource() == voltar) {
+            this.dispose();
+            TelaMain telaMain = new TelaMain();
+            telaMain.telaMain();
+        }
+    }
 }
-
-//----------MÉTODO DE CRIAÇÃO DE EVENTOS----------   
-
-
-public void actionPerformed(ActionEvent e) {
-    if(e.getSource() == MTPF){
-         this.dispose();
-         TelaCliMT_PF telaMTPF = new TelaCliMT_PF();
-         telaMTPF.telaMT_PF();
-    }
-    if(e.getSource() == MTPJ){
-         this.dispose();
-         TelaCliMT_PJ telaMTPJ = new TelaCliMT_PJ();
-         telaMTPJ.TelaMT_PJ();
-         telaMTPJ.setVisible(true);
-    }
-    if(e.getSource() == voltar){
-         this.dispose();
-         TelaMain telaMain = new TelaMain();
-         telaMain.telaMain();        
-    }
-     
- }
-}
-
-
-    
