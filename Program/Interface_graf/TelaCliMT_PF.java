@@ -77,6 +77,7 @@ public class TelaCliMT_PF extends Tela implements ActionListener {
         pesquisarpf.setText("PESQUISAR");
         pesquisarpf.setBounds(185, 250, 140, 40);
         pesquisarpf.setHorizontalAlignment(SwingConstants.CENTER);
+        pesquisarpf.addActionListener(this);
         this.add(pesquisarpf);
 
         voltar.setIcon(iconBack);

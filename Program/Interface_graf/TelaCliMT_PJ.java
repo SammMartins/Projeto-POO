@@ -37,6 +37,7 @@ public class TelaCliMT_PJ extends Tela implements ActionListener {
         // ----------Buttons------------//
         pesquisarpj.setVisible(true);
         pesquisarpj.setBounds(377, 120, 90, 30);
+        pesquisarpj.addActionListener(this);
         this.add(pesquisarpj);
 
         voltar.setIcon(iconBack);

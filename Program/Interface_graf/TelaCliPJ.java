@@ -7,11 +7,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class TelaCliPj extends Tela implements ActionListener {
+public class TelaCliPJ extends Tela implements ActionListener {
         JButton voltar = new JButton();
         JButton salvar = new JButton("Salvar");
 
-        public TelaCliPj() {
+        public TelaCliPJ() {
                 this.setTitle("Cadastro Pessoa Jurídica");
 
                 // ------------------------------------------------------------------\\

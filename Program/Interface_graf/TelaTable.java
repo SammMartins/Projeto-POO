@@ -27,9 +27,9 @@ public class TelaTable extends Tela implements ActionListener{
         setTitle("Resultado da Busca");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setSize(500, 400);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
+        
 
         voltar.setIcon(iconBack);
         voltar.setBounds(10, 15, 40, 30);
@@ -55,4 +55,7 @@ public class TelaTable extends Tela implements ActionListener{
     public void openTelaTable(){
         setVisible(true);
     }
+    public void actionPerformed(ActionEvent e) {
+             
+     }
 }

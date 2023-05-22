@@ -87,7 +87,7 @@ public class TelaCliPf extends Tela implements ActionListener {
         if(e.getSource() == voltar){
             this.dispose();
             TelaCli telaCli = new TelaCli();
-            telaCli.telaCli();     
+            telaCli.telaCli();      
        }
     }
     
