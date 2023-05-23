@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConexaoBD {
 
-    public static String url = "jdbc:mysql//localhost:3306/cadastro";
-    public static String user = "root";
-    public static String password = "";
+    public static String url = "jdbc:mysql//db4free.net:3306/bd_poo_ftc";
+    public static String user = "bcjrs_2023";
+    public static String password = "Poo@2023";
 
     public static Connection conn;
 
