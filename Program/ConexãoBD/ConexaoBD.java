@@ -24,7 +24,6 @@ public class ConexaoBD {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
-
         }
 
     }

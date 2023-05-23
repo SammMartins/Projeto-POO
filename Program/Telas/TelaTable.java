@@ -47,7 +47,7 @@ public class TelaTable extends Tela implements ActionListener{
         // Adiciona o JScrollPane ao JFrame
         getContentPane().add(scrollPane);
 
-        pack();
+        
         setLocationRelativeTo(null);
     }
     public void actionPerformed(ActionEvent e) {
