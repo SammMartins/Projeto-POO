@@ -17,26 +17,91 @@ public class TelaCliMT_PJ extends Tela implements ActionListener {
         setTitle("Pesquisa Pessoa Jurídica");
         setLocationRelativeTo(null);
 
-        // Label com o texto "PESQUISAR"
-        JLabel labelNome = new JLabel();
-        labelNome.setText("PESQUISAR PJ: ");
-        labelNome.setBounds(18, 70, 150, 70);
-        labelNome.setFont(new Font("Arial Black", Font.BOLD, 15));
-        labelNome.setHorizontalAlignment(SwingConstants.CENTER);
-        labelNome.setForeground(corLabel1);
-        labelNome.setVisible(true);
-        this.add(labelNome);
+        // Label Razão Social
+        JLabel lRazao = new JLabel();
+        lRazao.setText("Razão Social:");
+        lRazao.setBounds(30, 66, 300, 70);
+        lRazao.setForeground(corLabel1);
 
-        // Caixa para inserir Pesquisa
-        JTextField textName = new JTextField();
-        textName.setBounds(18, 120, 350, 30);
-        textName.setFont(new Font("Arial", Font.ITALIC, 12));
-        textName.setVisible(true);
-        this.add(textName);
+        this.add(lRazao);
+
+        // TextArea Razão Social
+        JTextField jtfRazao = new JTextField();
+        jtfRazao.setBounds(170, 90, 300, 25);
+        jtfRazao.setFont(new Font("Arial", Font.ITALIC, 12));
+        this.add(jtfRazao);
+
+        // ------------------------------------------------------------------
+
+        // Label CNPJ
+        JLabel lCnpj = new JLabel();
+        lCnpj.setText("CNPJ:");
+        lCnpj.setBounds(30, 100, 120, 70);
+        lCnpj.setForeground(corLabel1);
+
+        this.add(lCnpj);
+
+        // TextArea CNPJ
+        JTextField jtfCnpj = new JTextField();
+        jtfCnpj.setBounds(170, 124, 300, 25);
+        jtfCnpj.setFont(new Font("Arial", Font.ITALIC, 12));
+        this.add(jtfCnpj);
+
+        // ------------------------------------------------------------------
+
+        // Label E-mail
+        JLabel lEmail = new JLabel();
+        lEmail.setText("E-mail:");
+        lEmail.setBounds(30, 130, 120, 70);
+        lEmail.setForeground(corLabel1);
+
+        this.add(lEmail);
+
+        // TextArea E-mail
+        JTextField jtfEmail = new JTextField();
+        jtfEmail.setBounds(170, 158, 300, 25);
+        jtfEmail.setFont(new Font("Arial", Font.ITALIC, 12));
+        this.add(jtfEmail);
+
+        // ------------------------------------------------------------------
+
+        // Label Contato
+        JLabel lContato = new JLabel();
+        lContato.setText("Contato:");
+        lContato.setBounds(30, 168, 120, 70);
+        lContato.setForeground(corLabel1);
+
+        this.add(lContato);
+
+        // TextArea Contato
+        JTextField jtfContato = new JTextField();
+        jtfContato.setBounds(170, 192, 300, 25);
+        jtfContato.setFont(new Font("Arial", Font.ITALIC, 12));
+        this.add(jtfContato);
+
+        // ------------------------------------------------------------------
+
+        // Label Responsável legal
+        JLabel lResponsavelLegal = new JLabel();
+        lResponsavelLegal.setText("Responsável legal:");
+        lResponsavelLegal.setBounds(30, 202, 300, 70);
+        lResponsavelLegal.setForeground(corLabel1);
+
+        this.add(lResponsavelLegal);
+
+        // TextArea Responsável legal
+        JTextField jtfResponsavelLegal = new JTextField();
+        jtfResponsavelLegal.setBounds(170, 226, 300, 25);
+        jtfResponsavelLegal.setFont(new Font("Arial", Font.ITALIC, 12));
+        this.add(jtfResponsavelLegal);
 
         // ----------Buttons------------//
         pesquisarpj.setVisible(true);
-        pesquisarpj.setBounds(377, 120, 90, 30);
+        //pesquisarpj.setBounds(175, 285, 120, 40);
+        pesquisarpj.setBounds(175, 285, 140, 40);
+        pesquisarpj.setIcon(iconLupa);
+        pesquisarpj.setText("PESQUISAR");
+        pesquisarpj.setHorizontalAlignment(SwingConstants.CENTER);
         pesquisarpj.addActionListener(this);
         this.add(pesquisarpj);
 

@@ -56,6 +56,10 @@ public class TelaTable extends Tela implements ActionListener{
         setVisible(true);
     }
     public void actionPerformed(ActionEvent e) {
-             
+        if (e.getSource() == voltar) {
+            this.dispose();
+            TelaCliMT telaCliMT = new TelaCliMT();
+            telaCliMT.telaMT();
+        }
      }
 }

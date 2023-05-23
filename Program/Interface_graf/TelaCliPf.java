@@ -50,9 +50,9 @@ public class TelaCliPf extends Tela implements ActionListener {
         textCPF.setVisible(true);
         add(textCPF);      
 
-        //Label com o texto "CELULAR:"
+        //Label com o texto "CONTATO:"
         JLabel labelCelular = new JLabel(); 
-        labelCelular.setText("Celular:");
+        labelCelular.setText("Contato:");
         labelCelular.setBounds(30, 134, 70, 70);
         labelCelular.setForeground(corLabel1);
         labelCelular.setVisible(true);
