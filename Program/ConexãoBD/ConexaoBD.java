@@ -1,4 +1,4 @@
-package Program.Interface_graf.conexao;
+package Program.ConexãoBD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

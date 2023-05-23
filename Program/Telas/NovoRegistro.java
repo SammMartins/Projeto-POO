@@ -1,4 +1,4 @@
-package Program.Interface_graf;
+package Program.Telas;
 
 import javax.swing.*;
 //import javax.swing.plaf.RootPaneUI;
@@ -6,12 +6,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TelaCli extends Tela implements ActionListener{
+public class NovoRegistro extends Tela implements ActionListener{
     JButton PF = new JButton();
     JButton PJ = new JButton();
     JButton voltar = new JButton();
 
-    public void telaCli(){
+    public NovoRegistro(){
         setTitle("Gerenciar Clientes");
         setLocationRelativeTo(null);
 
@@ -58,18 +58,16 @@ public class TelaCli extends Tela implements ActionListener{
     public void actionPerformed(ActionEvent e) {
        if(e.getSource() == PF){
             this.dispose();
-            TelaCliPf telaPF = new TelaCliPf();
-            telaPF.telaCliPf();
+            NovoRegistroPF novoRegistroPF = new NovoRegistroPF();
        }
        if(e.getSource() == PJ){
             this.dispose();
-            TelaCliPJ telaPJ = new TelaCliPJ();
-            telaPJ.setVisible(true);
+            NovoRegistroPJ novoRegistroPJ = new NovoRegistroPJ();
        }
        if(e.getSource() == voltar){
             this.dispose();
-            TelaMain telaMain = new TelaMain();
-            telaMain.telaMain();        
+            Inicio telaMain = new Inicio();
+                   
        }
         
     }

@@ -1,4 +1,4 @@
-package Program.Interface_graf;
+package Program.Telas;
 
 //import java.awt.Color;
 import java.awt.Font;
@@ -7,11 +7,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class TelaCliPJ extends Tela implements ActionListener {
+public class NovoRegistroPJ extends Tela implements ActionListener {
         JButton voltar = new JButton();
         JButton salvar = new JButton("Salvar");
 
-        public TelaCliPJ() {
+        public NovoRegistroPJ() {
                 this.setTitle("Cadastro Pessoa Jurídica");
 
                 // ------------------------------------------------------------------\\
@@ -113,8 +113,8 @@ public class TelaCliPJ extends Tela implements ActionListener {
         public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == voltar) {
                         this.dispose();
-                        TelaCli telaCli = new TelaCli();
-                        telaCli.telaCli();
+                        NovoRegistro novoRegistro = new NovoRegistro();
+                        
                 }
         }
 }

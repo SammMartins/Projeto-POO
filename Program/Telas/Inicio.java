@@ -1,4 +1,4 @@
-package Program.Interface_graf;
+package Program.Telas;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -7,16 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.*;
 
-public class TelaMain extends JFrame implements ActionListener{
-    /*  OBS.: O metodo construtor foi substituido por um metodo comum da classe TelaMain, visto que
-     * depois de algumas pesquisas, ficou claro pra mim que não seria uma boa prática definir as 
-     * propriedades no construtor.
-     * 
-     * Os botões foram instanciados fora do método para serem tratados no ActionListener.
-     */
-    JButton novoRegistro = new JButton();
-    JButton manuntencaoRegistro = new JButton();
-    
+public class Inicio extends JFrame implements ActionListener{   
+
     public ImageIcon iconInsert = new ImageIcon("Images/insert.png");
     public ImageIcon iconConfig = new ImageIcon("Images/config.png");
     public ImageIcon iconCancel = new ImageIcon("Images/cancel.png"); 
@@ -25,14 +17,15 @@ public class TelaMain extends JFrame implements ActionListener{
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
     public ImageIcon iconLupa = new ImageIcon("Images/Lupa.png");
-    //------------------------Criação de Cores-----------------------------------------------------------
-    public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
+    public Color corFundo1 = new Color(27, 38, 44);       
     public Color corPanel = new Color(15, 76, 117);
-    public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
-    public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
-    
+    public Color corLabel1 = new Color(187, 225, 250);    
+    public Color corLabel2 = new Color(200,200,200);
 
-    public void telaMain(){
+    JButton novoRegistro = new JButton();
+    JButton manuntencaoRegistro = new JButton();
+
+    public Inicio(){
         
         setTitle("");
         setVisible(true);                              //configura visibilidade da tela.
@@ -64,9 +57,7 @@ public class TelaMain extends JFrame implements ActionListener{
         sublabelRegistro.setBounds(180, 60,300 ,100);
         sublabelRegistro.setFont(new Font("Arial", Font.PLAIN, 11));
         this.add(sublabelRegistro);
-
         //-------------------------------------------------------------------------------------------
-      
         JLabel labelManu = new JLabel();
         labelManu.setText("Matutenção de Registro");
         labelManu.setForeground(corLabel1);
@@ -75,7 +66,7 @@ public class TelaMain extends JFrame implements ActionListener{
         this.add(labelManu);
 
         JLabel sublabelManu = new JLabel();
-        sublabelManu.setText("Pesquisar, ");
+        sublabelManu.setText("Pesquisar, alterar ou deletar um registro.");
         sublabelManu.setForeground(corLabel2);
         sublabelManu.setBounds(180, 180,300 ,100);
         sublabelManu.setFont(new Font("Arial", Font.PLAIN, 11));
@@ -97,20 +88,15 @@ public class TelaMain extends JFrame implements ActionListener{
     //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == novoRegistro){  //Caso o botão de registro seja clicado.
-            //this.setVisible(false);
+        if(e.getSource() == novoRegistro){
             this.dispose();
-            TelaCli telaCli = new TelaCli();
-            telaCli.telaCli();
-            telaCli.aberturaCli();
+            NovoRegistro novoRegistro = new NovoRegistro();    
         }
            
-            if (e.getSource() == manuntencaoRegistro) { //Caso o botão de Manuntenção seja clicado.
-                this.dispose();
-                TelaCliMT telaCliMT = new TelaCliMT();
-                telaCliMT.telaMT();
-                telaCliMT.aberturaCliMT();
-            }     
-         }
+        if (e.getSource() == manuntencaoRegistro) {
+            this.dispose();
+            Manuntencao manuntencao = new Manuntencao();
+        }    
+    }
   }
  

@@ -1,24 +1,23 @@
-package Program.Interface_graf;
-
+package Program.Telas;
+//import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.*;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+//import java.awt.*;
 
-public class TelaCliMT_PF extends Tela implements ActionListener {
+public class NovoRegistroPF extends Tela implements ActionListener {
+  
+    JButton salvar = new JButton();
+    JButton voltar = new JButton();    
+    
+    public NovoRegistroPF(){
+        setTitle("Gerenciar Pessoa Física");
 
-    JButton voltar = new JButton();
-    JButton pesquisarpf = new JButton(iconLupa);
-
-    public void telaMT_PF() {
-        setTitle("Pesquisa Pessoa Física");
-        setLocationRelativeTo(null);
-
-        //Label com o texto "NOME:"
         JLabel labelNome = new JLabel(); 
         labelNome.setText("Nome:");
         labelNome.setBounds(30, 66, 70, 70);
@@ -29,7 +28,6 @@ public class TelaCliMT_PF extends Tela implements ActionListener {
 
         //Caixa para inserir o nome
         JTextField textName = new JTextField(); 
-        textName.setBorder(null);
         textName.setBounds(170, 90, 300, 25);
         textName.setFont(new Font("Arial", Font.ITALIC, 12));
         textName.setVisible(true);
@@ -45,16 +43,15 @@ public class TelaCliMT_PF extends Tela implements ActionListener {
         this.add(labelCPF);
 
         //Caixa para inserir o CPF
-        JTextField textCPF = new JTextField();
-        textCPF.setBorder(null); 
+        JTextField textCPF = new JTextField(); 
         textCPF.setBounds(170, 124, 300, 25);
         textCPF.setFont(new Font("Arial", Font.ITALIC, 12));
         textCPF.setVisible(true);
         add(textCPF);      
 
-        //Label com o texto "CELULAR:"
+        //Label com o texto "CONTATO:"
         JLabel labelCelular = new JLabel(); 
-        labelCelular.setText("Celular:");
+        labelCelular.setText("Contato:");
         labelCelular.setBounds(30, 134, 70, 70);
         labelCelular.setForeground(corLabel1);
         labelCelular.setVisible(true);
@@ -62,42 +59,46 @@ public class TelaCliMT_PF extends Tela implements ActionListener {
 
         //Caixa para inserir o celular
         JTextField textCELULAR = new JTextField(); 
-        textCELULAR.setBorder(null);
         textCELULAR.setBounds(170, 158, 300, 25);
         textCELULAR.setFont(new Font("Arial", Font.ITALIC, 12));
         textCELULAR.setVisible(true);
         this.add(textCELULAR);   
         
-        //------------------BUTTONS--------------------------------
+        //--------------------------------------------------
 
+        //Criação do botão de cadastro
 
-        pesquisarpf.setVisible(true);
-        pesquisarpf.setBorder(null);
-        pesquisarpf.setIcon(iconLupa);
-        pesquisarpf.setText("PESQUISAR");
-        pesquisarpf.setBounds(185, 250, 140, 40);
-        pesquisarpf.setHorizontalAlignment(SwingConstants.CENTER);
-        pesquisarpf.addActionListener(this);
-        this.add(pesquisarpf);
+        salvar.setVisible(true);
+        salvar.setText("Salvar");
+        salvar.setBounds(185, 250, 120, 40);
+        salvar.setIcon(iconSave);
+        salvar.setHorizontalAlignment(SwingConstants.CENTER);
+        this.add(salvar);
 
+        
         voltar.setIcon(iconBack);
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
     }
-
-    // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
+ //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == voltar) {
+        if(e.getSource() == voltar){
             this.dispose();
-            TelaCliMT telaCliMT = new TelaCliMT();
-            telaCliMT.telaMT();
-        }
-
-        if (e.getSource() == pesquisarpf) {
-            this.dispose();
-            TelaTable table = new TelaTable();
-            table.openTelaTable();
-        }
+            NovoRegistro novoRegistro = new NovoRegistro();     
+       }
     }
+    
+        
+
+    
+
+
+        
+
+
+
+
 }
+
+

@@ -1,4 +1,4 @@
-package Program.Interface_graf;
+package Program.Telas;
 import java.awt.*;
 import javax.swing.*;
 

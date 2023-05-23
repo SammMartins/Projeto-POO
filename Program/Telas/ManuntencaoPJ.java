@@ -1,4 +1,4 @@
-package Program.Interface_graf;
+package Program.Telas;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -8,12 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class TelaCliMT_PJ extends Tela implements ActionListener {
+public class ManuntencaoPJ extends Tela implements ActionListener {
 
     JButton voltar = new JButton();
     JButton pesquisarpj = new JButton(iconLupa);
 
-    public void TelaMT_PJ() {
+    public ManuntencaoPJ() {
         setTitle("Pesquisa Pessoa Jurídica");
         setLocationRelativeTo(null);
 
@@ -111,18 +111,14 @@ public class TelaCliMT_PJ extends Tela implements ActionListener {
         this.add(voltar);
     }
 
-    // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == voltar) {
             this.dispose();
-            TelaCliMT telaCliMT = new TelaCliMT();
-            telaCliMT.telaMT();
+            Manuntencao manuntencao = new Manuntencao();
         }
-
         if (e.getSource() == pesquisarpj) {
             this.dispose();
             TelaTable table = new TelaTable();
-            table.openTelaTable();
         }
     }
 }

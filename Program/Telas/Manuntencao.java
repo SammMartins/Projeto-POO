@@ -1,17 +1,17 @@
-package Program.Interface_graf;
+package Program.Telas;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TelaCliMT extends Tela implements ActionListener {
+public class Manuntencao extends Tela implements ActionListener {
 
     JButton MTPF = new JButton();
     JButton MTPJ = new JButton();
     JButton voltar = new JButton();
 
-    public void telaMT() {
+    public Manuntencao() {
         setTitle("Tela de Manutenção");
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,28 +45,20 @@ public class TelaCliMT extends Tela implements ActionListener {
         voltar.addActionListener(this);
         this.add(voltar);
     }
-
-    public void aberturaCliMT() {
-        this.setVisible(true);
-    }
-
     //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == MTPF) {
             this.dispose();
-            TelaCliMT_PF telaMTPF = new TelaCliMT_PF();
-            telaMTPF.telaMT_PF();
+            ManuntencaoPF manuntencaoPF = new ManuntencaoPF();
+
         }
         if (e.getSource() == MTPJ) {
             this.dispose();
-            TelaCliMT_PJ telaMTPJ = new TelaCliMT_PJ();
-            telaMTPJ.TelaMT_PJ();
-            telaMTPJ.setVisible(true);
+            ManuntencaoPJ manuntencaoPJ = new ManuntencaoPJ();
         }
         if (e.getSource() == voltar) {
             this.dispose();
-            TelaMain telaMain = new TelaMain();
-            telaMain.telaMain();
+            Inicio inicio = new Inicio();    
         }
     }
 }

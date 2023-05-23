@@ -1,24 +1,23 @@
-package Program.Interface_graf;
-//import java.awt.Color;
+package Program.Telas;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.*;
 import javax.swing.JTextField;
-//import java.awt.*;
+import javax.swing.SwingConstants;
 
-public class TelaCliPf extends Tela implements ActionListener {
-  
-    JButton salvar = new JButton();
-    JButton voltar = new JButton();    
-    
-    public void telaCliPf(){
-        setTitle("Gerenciar Pessoa Física");
+public class ManuntencaoPF extends Tela implements ActionListener {
 
-        //Label com o texto "NOME:"
+    JButton voltar = new JButton();
+    JButton pesquisarpf = new JButton(iconLupa);
+
+    public ManuntencaoPF() {
+        setTitle("Pesquisa Pessoa Física");
+        setLocationRelativeTo(null);
+
         JLabel labelNome = new JLabel(); 
         labelNome.setText("Nome:");
         labelNome.setBounds(30, 66, 70, 70);
@@ -29,6 +28,7 @@ public class TelaCliPf extends Tela implements ActionListener {
 
         //Caixa para inserir o nome
         JTextField textName = new JTextField(); 
+        textName.setBorder(null);
         textName.setBounds(170, 90, 300, 25);
         textName.setFont(new Font("Arial", Font.ITALIC, 12));
         textName.setVisible(true);
@@ -44,15 +44,16 @@ public class TelaCliPf extends Tela implements ActionListener {
         this.add(labelCPF);
 
         //Caixa para inserir o CPF
-        JTextField textCPF = new JTextField(); 
+        JTextField textCPF = new JTextField();
+        textCPF.setBorder(null); 
         textCPF.setBounds(170, 124, 300, 25);
         textCPF.setFont(new Font("Arial", Font.ITALIC, 12));
         textCPF.setVisible(true);
         add(textCPF);      
 
-        //Label com o texto "CONTATO:"
+        //Label com o texto "CELULAR:"
         JLabel labelCelular = new JLabel(); 
-        labelCelular.setText("Contato:");
+        labelCelular.setText("Celular:");
         labelCelular.setBounds(30, 134, 70, 70);
         labelCelular.setForeground(corLabel1);
         labelCelular.setVisible(true);
@@ -60,47 +61,40 @@ public class TelaCliPf extends Tela implements ActionListener {
 
         //Caixa para inserir o celular
         JTextField textCELULAR = new JTextField(); 
+        textCELULAR.setBorder(null);
         textCELULAR.setBounds(170, 158, 300, 25);
         textCELULAR.setFont(new Font("Arial", Font.ITALIC, 12));
         textCELULAR.setVisible(true);
         this.add(textCELULAR);   
         
-        //--------------------------------------------------
+        //------------------BUTTONS--------------------------------
 
-        //Criação do botão de cadastro
 
-        salvar.setVisible(true);
-        salvar.setText("Salvar");
-        salvar.setBounds(185, 250, 120, 40);
-        salvar.setIcon(iconSave);
-        salvar.setHorizontalAlignment(SwingConstants.CENTER);
-        this.add(salvar);
+        pesquisarpf.setVisible(true);
+        pesquisarpf.setBorder(null);
+        pesquisarpf.setIcon(iconLupa);
+        pesquisarpf.setText("PESQUISAR");
+        pesquisarpf.setBounds(185, 250, 140, 40);
+        pesquisarpf.setHorizontalAlignment(SwingConstants.CENTER);
+        pesquisarpf.addActionListener(this);
+        this.add(pesquisarpf);
 
-        
         voltar.setIcon(iconBack);
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
     }
- //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
+
+    // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == voltar){
+        if (e.getSource() == voltar) {
             this.dispose();
-            TelaCli telaCli = new TelaCli();
-            telaCli.telaCli();      
-       }
+            Manuntencao manuntencao = new Manuntencao();
+        }
+
+        if (e.getSource() == pesquisarpf) {
+            this.dispose();
+            TelaTable table = new TelaTable();
+        }
     }
-    
-        
-
-    
-
-
-        
-
-
-
-
 }
-
-

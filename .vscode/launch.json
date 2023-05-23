@@ -8,6 +8,20 @@
             "type": "java",
             "name": "Start",
             "request": "launch",
+            "mainClass": "Program.Telas.Start",
+            "projectName": "Projeto-POO_e3868e9e"
+        },
+        {
+            "type": "java",
+            "name": "Start",
+            "request": "launch",
+            "mainClass": "Program.Interface_graf.Start",
+            "projectName": "Projeto-POO_e3868e9e"
+        },
+        {
+            "type": "java",
+            "name": "Start",
+            "request": "launch",
             "mainClass": "Program.Interface_graf.Start",
             "projectName": "Projeto_POO_2f032c1d"
         },

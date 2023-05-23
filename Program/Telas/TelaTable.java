@@ -1,4 +1,4 @@
-package Program.Interface_graf;
+package Program.Telas;
 
 import javax.swing.*;
 import javax.swing.JFrame;
@@ -7,11 +7,9 @@ import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -23,25 +21,25 @@ public class TelaTable extends Tela implements ActionListener{
     private DefaultTableModel tableModel;
     JButton voltar = new JButton();
 
-    public void telaTable() {
+    public TelaTable() {
         setTitle("Resultado da Busca");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
         
-
         voltar.setIcon(iconBack);
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
 
+        // Cria a tabela com o modelo de dados
+        table = new JTable(tableModel);
+        this.add(table);
+
         // Cria o modelo de dados da tabela
         tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(new String[] { "Coluna 1", "Coluna 2", "Coluna 3", "Coluna 4", "Coluna 5" });
-
-        // Cria a tabela com o modelo de dados
-        table = new JTable(tableModel);
 
         // Cria um JScrollPane para permitir a rolagem dos dados
         JScrollPane scrollPane = new JScrollPane(table);
@@ -52,14 +50,10 @@ public class TelaTable extends Tela implements ActionListener{
         pack();
         setLocationRelativeTo(null);
     }
-    public void openTelaTable(){
-        setVisible(true);
-    }
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == voltar) {
             this.dispose();
-            TelaCliMT telaCliMT = new TelaCliMT();
-            telaCliMT.telaMT();
+            Manuntencao manuntencao = new Manuntencao();
         }
      }
 }
