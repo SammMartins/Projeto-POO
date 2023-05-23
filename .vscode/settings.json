@@ -10,7 +10,8 @@
             "c:\\Users\\rafar\\Downloads\\openjfx\\javafx-sdk-20.0.1\\lib\\javafx.swing.jar",
             "c:\\Users\\rafar\\Downloads\\openjfx\\javafx-sdk-20.0.1\\lib\\javafx.web.jar",
             "c:\\Users\\rafar\\Downloads\\openjfx\\javafx-sdk-20.0.1\\lib\\javafx-swt.jar",
-            "Program/Telas/mysql-connector-java-5.1.35-bin.jar"
+            "Program/Telas/mysql-connector-java-5.1.35-bin.jar",
+            "c:\\Users\\CLEIDE\\Downloads\\Bruno\\mysql-connector-java-5.1.35-bin.jar"
         ],
         "exclude": [
             "c:\\Users\\rafar\\Downloads\\jjjjjjjjj\\mysql-connector-j-8.0.33\\mysql-connector-j-8.0.33.jar",
