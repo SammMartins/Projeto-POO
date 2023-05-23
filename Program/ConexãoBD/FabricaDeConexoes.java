@@ -12,32 +12,19 @@ public class FabricaDeConexoes {
             Class.forName("com.mysql.jdbc.Driver");
 
         } catch (ClassNotFoundException e) {
-            System.out.println("\n Ocorreu um erro!\nDrive não localizado!");
+            System.out.println("\n Ocorreu um erro!\nDrive não localizado!"+ e.toString());
             System.exit(1);
 
         }
-
-    }
-
-    public static String url = "jdbc:mysql//db4free.net:3306/bd_poo_ftc";
-    public static String user = "bcjrs_2023";
-    public static String password = "Poo@2023";
-
-    public static Connection conn;
-
-    public static Connection getConexaoBD() {
-
-        try {
-            if (conn == null) {
-                conn = DriverManager.getConnection(url, user, password);
-                return conn;
-            } else {
-                return conn;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        try{
+            return DriverManager.getConnection("jdbc:mysql//"+"db4free.net:3306"+"/"+"bd_poo_ftc", "bcjrs_2023", "Poo@2023");
+        }catch(SQLException e){
+            System.out.println("\n Ocorreu um erro!\nBanco não encontrado" + e.toString());
+            System.exit(2);
             return null;
+            
         }
 
     }
 }
+
