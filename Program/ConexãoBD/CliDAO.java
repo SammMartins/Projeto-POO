@@ -66,10 +66,10 @@ public class CliDAO {
 
             while (rs.next()) {
                 Cliente c = new Cliente();
-                p.setNome(rs.getString("nome"));
-                p.setEndereco(rs.getString("endereco"));
-                p.setFone(rs.getString("fone"));
-                p.setEmail(rs.getStrting("email"));
+                c.setNome(rs.getString("nome"));
+                c.setEndereco(rs.getString("endereco"));
+                c.setFone(rs.getString("fone"));
+                c.setEmail(rs.getStrting("email"));
 
                 cliente.add(c);
             }
