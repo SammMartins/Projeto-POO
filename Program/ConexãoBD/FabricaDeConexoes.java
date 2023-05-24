@@ -17,9 +17,9 @@ public class FabricaDeConexoes {
 
         }
         try{
-            return DriverManager.getConnection("jdbc:mysql//"+"db4free.net:3306"+"/"+"bd_poo_ftc", "bcjrs_2023", "Poo@2023");
+            return DriverManager.getConnection("jdbc:mysql://" + host + "/" + banco, usuario, senha);
         }catch(SQLException e){
-            System.out.println("\n Ocorreu um erro!\nBanco não encontrado" + e.toString());
+            System.out.println("\n Ocorreu um erro!\nBanco não encontrado!!!" + e.toString());
             System.exit(2);
             return null;
             

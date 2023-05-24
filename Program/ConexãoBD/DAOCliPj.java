@@ -16,9 +16,9 @@ public class DAOCliPj {
 
     public void insert(ClientePJ p) {
 
-        String sql = "INSERT INTO Pessoa" +
-                "(nome, cpf, contato)" +
-                " VALUES(?,?,?)";
+        String sql = "INSERT INTO clipj" +
+        "razao, cnpj, email, contato, responsavel" +
+                " VALUES(?,?,?,?,?)";
 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -38,7 +38,7 @@ public class DAOCliPj {
     public ClientePJ busca(String n) {
         ClientePJ p = new ClientePJ();
         try {
-            String sql = "select * from clipf where nome like ?";
+            String sql = "select * from clipj where nome like ?";
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, "%" + n + "%");
 
@@ -68,7 +68,7 @@ public class DAOCliPj {
     public List<ClientePJ> lista() {
         try {
             List<ClientePJ> clientes = new ArrayList<ClientePJ>();
-            PreparedStatement stmt = conexao.prepareStatement("select * from Pessoa");
+            PreparedStatement stmt = conexao.prepareStatement("select * from clipj");
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
@@ -91,7 +91,7 @@ public class DAOCliPj {
     }
 
     public void altera(ClientePJ c, String n) {
-        String sql = "update Cliente set" + "nome=?, cpf=?, contato=?" + "where nome=?";
+        String sql = "update clipj set" + "razao=?, cnpj=?, email=?, contato=?, responsavel=?" + "where nome=?";
 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
