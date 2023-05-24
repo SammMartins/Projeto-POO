@@ -8,8 +8,17 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class NovoRegistroPJ extends Tela implements ActionListener {
+        // Instancia de botoes
         JButton voltar = new JButton();
         JButton salvar = new JButton("Salvar");
+        // Instancia de TextField
+        JTextField jtfRazao = new JTextField();
+        JTextField jtfCnpj = new JTextField();
+        JTextField jtfEmail = new JTextField();
+        JTextField jtfContato = new JTextField();
+        JTextField jtfResponsavelLegal = new JTextField();
+        
+        
 
         public NovoRegistroPJ() {
                 this.setTitle("Cadastro Pessoa Jurídica");
@@ -21,14 +30,13 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 lRazao.setText("Razão Social:");
                 lRazao.setBounds(30, 66, 300, 70);
                 lRazao.setForeground(corLabel1);
-
                 this.add(lRazao);
 
                 // Caixa para inserir Razão Social
-                JTextField jtfRazao = new JTextField();
                 jtfRazao.setBounds(170, 90, 300, 25);
                 jtfRazao.setFont(new Font("Arial", Font.ITALIC, 12));
                 jtfRazao.setToolTipText("Insira a razão social aqui");
+                jtfRazao.addActionListener(this);
                 this.add(jtfRazao);
 
                 // ------------------------------------------------------------------
@@ -38,14 +46,13 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 lCnpj.setText("CNPJ:");
                 lCnpj.setBounds(30, 100, 120, 70);
                 lCnpj.setForeground(corLabel1);
-
                 this.add(lCnpj);
 
                 // Caixa para inserir o CNPJ
-                JTextField jtfCnpj = new JTextField();
                 jtfCnpj.setBounds(170, 124, 300, 25);
                 jtfCnpj.setFont(new Font("Arial", Font.ITALIC, 12));
                 jtfCnpj.setToolTipText("Insira o CNPJ aqui");
+                jtfCnpj.addActionListener(this);
                 this.add(jtfCnpj);
 
                 // ------------------------------------------------------------------
@@ -55,14 +62,13 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 lEmail.setText("E-mail:");
                 lEmail.setBounds(30, 130, 120, 70);
                 lEmail.setForeground(corLabel1);
-
                 this.add(lEmail);
 
                 // Caixa para inserir o E-mail
-                JTextField jtfEmail = new JTextField();
                 jtfEmail.setBounds(170, 158, 300, 25);
                 jtfEmail.setFont(new Font("Arial", Font.ITALIC, 12));
                 jtfEmail.setToolTipText("Insira o email aqui");
+                jtfEmail.addActionListener(this);
                 this.add(jtfEmail);
 
                 // ------------------------------------------------------------------
@@ -72,14 +78,13 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 lContato.setText("Contato:");
                 lContato.setBounds(30, 168, 120, 70);
                 lContato.setForeground(corLabel1);
-
                 this.add(lContato);
 
                 // Caixa para inserir o Contato
-                JTextField jtfContato = new JTextField();
                 jtfContato.setBounds(170, 192, 300, 25);
                 jtfContato.setFont(new Font("Arial", Font.ITALIC, 12));
                 jtfContato.setToolTipText("Insira o contato aqui");
+                jtfContato.addActionListener(this);
                 this.add(jtfContato);
 
                 // ------------------------------------------------------------------
@@ -89,14 +94,13 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 lResponsavelLegal.setText("Responsável legal:");
                 lResponsavelLegal.setBounds(30, 202, 300, 70);
                 lResponsavelLegal.setForeground(corLabel1);
-
                 this.add(lResponsavelLegal);
 
                 // Caixa para inserir o Responsável legal
-                JTextField jtfResponsavelLegal = new JTextField();
                 jtfResponsavelLegal.setBounds(170, 226, 300, 25);
                 jtfResponsavelLegal.setFont(new Font("Arial", Font.ITALIC, 12));
                 jtfResponsavelLegal.setToolTipText("Insira o Responsável legal aqui");
+                jtfResponsavelLegal.addActionListener(this);
                 this.add(jtfResponsavelLegal);
 
                 // ------------------------
@@ -120,6 +124,26 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 if (e.getSource() == voltar) {
                         this.dispose();
                         NovoRegistro novoRegistro = new NovoRegistro();
+
+                }
+
+                if (e.getSource() == jtfRazao) {
+
+                }
+
+                if (e.getSource() == jtfCnpj) {
+
+                }
+                
+                if (e.getSource() == jtfEmail) {
+
+                }
+
+                if (e.getSource() == jtfContato) {
+
+                }
+
+                if (e.getSource() == jtfResponsavelLegal) {
 
                 }
         }
