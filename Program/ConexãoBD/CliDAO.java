@@ -1,5 +1,5 @@
 package Program.ConexãoBD;
-/* 
+
 import java.sql.*;
 import java.util.*;
 
@@ -12,40 +12,22 @@ public class CliDAO {
 
     }
 
-    public void insert(Pessoa n){
+    public void insert(Pessoa p) {
 
-    public Pessoa buscar(String n){
+        String sql = "INSERT INTO Pessoa" +
+                "(nome, cpf, contato)" +
+                " VALUES(?,?,?)";
 
-    public void altera (Pessoa p, String n) {
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, cadastropf.getNome());
+            stmt.setString(2, cadastropf.getCpf());
+            stmt.setString(3, cadastropf.getContato());
 
-    public void apaga (String n) {
-
-    public List<Pessoa> lista(){ 
-        }
-}}}
-
-}
-}
-
-
-
- 	public void insert(Pessoa p) {
-		
-		String sql = "INSERT INTO Pessoa"+
-        "(nome, cpf, contato)" +
-        " VALUES(?,?,?)";
-		
-		try {
-			PreparedStatement stmt = conexao.prepareStatement(sql);
-			stmt.setString(1,cadastropf.getNome());
-			stmt.setString(2,cadastropf.getCpf());
-			stmt.setString(3, cadastropf.getContato());
-
-		
-			stmt.execute();	
+            stmt.execute();
             stmt.close();
-		} catch (SQLException e) {
-            throw new RuntimeException(e)
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
- */
+}
