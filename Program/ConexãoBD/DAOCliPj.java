@@ -3,10 +3,10 @@ package Program.ConexãoBD;
 import java.sql.*;
 import java.util.*;
 
-public class CliDAO {
+public class DAOCliPj {
     private Connection conexao;
 
-    public CliDAO() {
+    public DAOCliPj() {
         conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", "bd_poo_ftc", "bcjrs_2023",
                 "Poo@2023");
 
