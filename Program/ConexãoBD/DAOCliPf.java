@@ -8,38 +8,30 @@ public class DAOCliPf {
     private Connection conexao;
 
     public DAOCliPf() {
-        conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", "bd_poo_ftc", "bcjrs_2023","Poo@2023");
-
+        conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", 
+        "bd_poo_ftc", "bcjrs_2023","Poo@2023");
     }
-
-
     public void insert(ClientePF c) {
-
         String sql = "INSERT INTO cliPF" +
                 "(nome, cpf, contato)" +
                 " VALUES(?,?,?)";
-
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, c.getNome());
             stmt.setString(2, c.getCPF());
-            stmt.setString(3, c.getContato());
-          
-
+            stmt.setString(3, c.getContato()); 
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
     public ClientePF busca (String n) {
         ClientePF p = new ClientePF();
         try{
             String sql = "select * from clipf where nome like ?";
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1,"%"+ n + "%");
-    
             ResultSet rs = stmt.executeQuery();
     
             p.setNome("Não Encontrado!");
@@ -51,7 +43,6 @@ public class DAOCliPf {
                     p.setCPF(rs.getString("CPF"));
                 }
             }
-    
             rs.close();
             stmt.close();
             return p;
@@ -59,7 +50,6 @@ public class DAOCliPf {
             throw new RuntimeException(e);
         }
     }
-
     public List<ClientePF> lista() {
         try {
             List<ClientePF> clipf = new ArrayList<ClientePF>();
@@ -70,8 +60,7 @@ public class DAOCliPf {
                 ClientePF c = new ClientePF();
                 c.setNome(rs.getString("nome"));
                 c.setContato(rs.getString("contato"));
-                c.setCPF(rs.getString("CPF"));
-                
+                c.setCPF(rs.getString("CPF"));    
 
                 clipf.add(c);
             }
@@ -82,7 +71,6 @@ public class DAOCliPf {
             throw new RuntimeException(e);
         }
     }
-
     public void altera(ClientePF c, String s){
         String sql = "update CliPF set" + "nome=?, cpf=?, contato=?" + "where nome=?";
     

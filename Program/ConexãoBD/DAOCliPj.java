@@ -2,7 +2,6 @@ package Program.ConexãoBD;
 
 import java.sql.*;
 import java.util.*;
-
 import Program.Classes.ClientePJ;
 
 public class DAOCliPj {
@@ -11,15 +10,12 @@ public class DAOCliPj {
     public DAOCliPj() {
         conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", "bd_poo_ftc", "bcjrs_2023",
                 "Poo@2023");
-
     }
-
     public void insert(ClientePJ p) {
 
         String sql = "INSERT INTO clipj" +
         "razao, cnpj, email, contato, responsavel" +
-                " VALUES(?,?,?,?,?)";
-
+           " VALUES(?,?,?,?,?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, p.getRazao());
@@ -34,7 +30,6 @@ public class DAOCliPj {
             throw new RuntimeException(e);
         }
     }
-
     public ClientePJ busca(String n) {
         ClientePJ p = new ClientePJ();
         try {
@@ -43,7 +38,6 @@ public class DAOCliPj {
             stmt.setString(1, "%" + n + "%");
 
             ResultSet rs = stmt.executeQuery();
-
             p.setRazao("Não Encontrado!"); // ANTES p.setNome("Não Encontrado!");-- ta dando erro
 
             while (rs.next()) {
@@ -55,16 +49,13 @@ public class DAOCliPj {
                     p.setResponsavel(rs.getString("Responsavel"));
                 }
             }
-
             rs.close();
             stmt.close();
             return p;
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
     public List<ClientePJ> lista() {
         try {
             List<ClientePJ> clientes = new ArrayList<ClientePJ>();
@@ -89,7 +80,6 @@ public class DAOCliPj {
             throw new RuntimeException(e);
         }
     }
-
     public void altera(ClientePJ c, String n) {
         String sql = "update clipj set" + "razao=?, cnpj=?, email=?, contato=?, responsavel=?" + "where nome=?";
 
