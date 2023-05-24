@@ -1,5 +1,6 @@
 package Program.ConexãoBD;
 
+import Program.Classes.ClientePF;
 import java.sql.*;
 import java.util.*;
 
@@ -12,17 +13,19 @@ public class DAOCliPf {
 
     }
 
-    public void insert(Pessoa p) {
 
-        String sql = "INSERT INTO Pessoa" +
+    public void insert(ClientePF c) {
+
+        String sql = "INSERT INTO cliPF" +
                 "(nome, cpf, contato)" +
                 " VALUES(?,?,?)";
 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, cadastropf.getNome());
-            stmt.setString(2, cadastropf.getCpf());
-            stmt.setString(3, cadastropf.getContato());
+            stmt.setString(1, c.getNome());
+            stmt.setString(2, c.getCPF());
+            stmt.setString(3, c.getContato());
+          
 
             stmt.execute();
             stmt.close();
@@ -31,8 +34,8 @@ public class DAOCliPf {
         }
     }
 
-    public Cliente busca (String n) {
-        Cliente p = new Pessoa();
+    public ClientePF busca (String n) {
+        ClientePF p = new ClientePF();
         try{
             String sql = "select * from clipf where nome like ?";
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -42,11 +45,11 @@ public class DAOCliPf {
     
             p.setNome("Não Encontrado!");
     
-            While(rs.next()){
+            while(rs.next()){
                 if(rs.getString("nome").equals(n)){
                     p.setNome(rs.getString("nome"));
-                    p.setEndereco(rs.getString("Endereco"));
-                    p.setFone(rs.getString("Fone"));
+                    p.setContato(rs.getString("contato"));
+                    p.setCPF(rs.getString("CPF"));
                 }
             }
     
@@ -58,38 +61,37 @@ public class DAOCliPf {
         }
     }
 
-    public List<Cliente> lista() {
+    public List<ClientePF> lista() {
         try {
-            List<Cliente> clientes = new ArrayList<Cliente>();
+            List<ClientePF> clipf = new ArrayList<ClientePF>();
             PreparedStatement stmt = conexao.prepareStatement("select * from Pessoa");
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Cliente c = new Cliente();
+                ClientePF c = new ClientePF();
                 c.setNome(rs.getString("nome"));
-                c.setEndereco(rs.getString("endereco"));
-                c.setFone(rs.getString("fone"));
-                c.setEmail(rs.getStrting("email"));
+                c.setContato(rs.getString("contato"));
+                c.setCPF(rs.getString("CPF"));
+                
 
-                cliente.add(c);
+                clipf.add(c);
             }
             rs.close();
             stmt.close();
-            return clientes;
+            return clipf;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void altera(Cliente c, String s){
-        String sql = "update Cliente set" + "nome=?, cpf=?, contato=?" + "where nome=?";
+    public void altera(ClientePF c, String s){
+        String sql = "update CliPF set" + "nome=?, cpf=?, contato=?" + "where nome=?";
     
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1,c.getNome());
-            stmt.setString(2,c.getCpf());
+            stmt.setString(2,c.getCPF());
             stmt.setString(3,c.getContato());
-            stmt.setString(4,n);
     
             stmt.execute();
             stmt.close();
