@@ -18,57 +18,58 @@ public class ManuntencaoPF extends Tela implements ActionListener {
         setTitle("Pesquisa Pessoa Física");
         setLocationRelativeTo(null);
 
-        JLabel labelNome = new JLabel(); 
+        // Label com o texto: NOME
+        JLabel labelNome = new JLabel();
         labelNome.setText("Nome:");
         labelNome.setBounds(30, 66, 70, 70);
         labelNome.setForeground(corLabel1);
         labelNome.setVisible(true);
         this.add(labelNome);
-        
 
-        //Caixa para inserir o nome
-        JTextField textName = new JTextField(); 
+        // Caixa para inserir o nome
+        JTextField textName = new JTextField();
         textName.setBorder(null);
         textName.setBounds(170, 90, 300, 25);
         textName.setFont(new Font("Arial", Font.ITALIC, 12));
+        textName.setToolTipText("Insira o nome aqui");
         textName.setVisible(true);
         this.add(textName);
-        
 
-        //Labell com o texto "CPF:"
-        JLabel labelCPF = new JLabel(); 
+        // Label com o texto: "CPF"
+        JLabel labelCPF = new JLabel();
         labelCPF.setText("CPF:");
         labelCPF.setBounds(30, 100, 70, 70);
         labelCPF.setForeground(corLabel1);
         labelCPF.setVisible(true);
         this.add(labelCPF);
 
-        //Caixa para inserir o CPF
+        // Caixa para inserir o CPF
         JTextField textCPF = new JTextField();
-        textCPF.setBorder(null); 
+        textCPF.setBorder(null);
         textCPF.setBounds(170, 124, 300, 25);
         textCPF.setFont(new Font("Arial", Font.ITALIC, 12));
+        textCPF.setToolTipText("Insira o CPF aqui");
         textCPF.setVisible(true);
-        add(textCPF);      
+        add(textCPF);
 
-        //Label com o texto "CELULAR:"
-        JLabel labelCelular = new JLabel(); 
+        // Label com o texto "CELULAR:"
+        JLabel labelCelular = new JLabel();
         labelCelular.setText("Celular:");
         labelCelular.setBounds(30, 134, 70, 70);
         labelCelular.setForeground(corLabel1);
         labelCelular.setVisible(true);
         this.add(labelCelular);
 
-        //Caixa para inserir o celular
-        JTextField textCELULAR = new JTextField(); 
+        // Caixa para inserir o celular
+        JTextField textCELULAR = new JTextField();
         textCELULAR.setBorder(null);
         textCELULAR.setBounds(170, 158, 300, 25);
         textCELULAR.setFont(new Font("Arial", Font.ITALIC, 12));
+        textCELULAR.setToolTipText("Insira o celular aqui");
         textCELULAR.setVisible(true);
-        this.add(textCELULAR);   
-        
-        //------------------BUTTONS--------------------------------
+        this.add(textCELULAR);
 
+        // ------------------BUTTONS--------------------------------
 
         pesquisarpf.setVisible(true);
         pesquisarpf.setBorder(null);
