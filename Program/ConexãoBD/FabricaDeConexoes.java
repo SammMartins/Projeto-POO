@@ -9,7 +9,7 @@ public class FabricaDeConexoes {
     public Connection solicitaConexao(String host, String banco, String usuario, String senha) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
         } catch (ClassNotFoundException e) {
             System.out.println("\n Ocorreu um erro!\nDrive não localizado!"+ e.toString());
