@@ -127,24 +127,12 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
 
                 }
 
-                if (e.getSource() == jtfRazao) {
-
+                if (e.getSource() == salvar) {
+                        
+                        
+                        
                 }
 
-                if (e.getSource() == jtfCnpj) {
-
-                }
                 
-                if (e.getSource() == jtfEmail) {
-
-                }
-
-                if (e.getSource() == jtfContato) {
-
-                }
-
-                if (e.getSource() == jtfResponsavelLegal) {
-
-                }
         }
 }
