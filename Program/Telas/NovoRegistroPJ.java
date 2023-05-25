@@ -18,6 +18,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
         JTextField jtfContato = new JTextField();
         JTextField jtfResponsavelLegal = new JTextField();
         
+        private String sRazao,sCnpj,sEmail,sContato,sResponsavelLegal;
         
 
         public NovoRegistroPJ() {
@@ -115,8 +116,18 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
 
                 voltar.setIcon(iconBack);
                 voltar.setBounds(10, 15, 40, 30);
-                voltar.addActionListener(this);
+                salvar.addActionListener(new ActionListener() { //MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                                sRazao = jtfRazao.getText();
+                                sCnpj = jtfCnpj.getText();
+                                sEmail = jtfEmail.getText();
+                                sContato = jtfContato.getText();
+                                sResponsavelLegal = jtfResponsavelLegal.getText();
+                            System.out.println("Texto coletado do textField: " + sRazao + " " + sCnpj + " " + sEmail + " " + sContato + " " + sResponsavelLegal + " ");
+                        }});
                 this.add(voltar);
+                
         }
 
         // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
@@ -126,13 +137,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                         NovoRegistro novoRegistro = new NovoRegistro();
 
                 }
-
-                if (e.getSource() == salvar) {
-                        
-                        
-                        
-                }
-
                 
         }
+        
 }
