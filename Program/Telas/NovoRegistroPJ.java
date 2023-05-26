@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import Program.Classes.ClientePJ;
+
 public class NovoRegistroPJ extends Tela implements ActionListener {
         // Instancia de botoes
         JButton voltar = new JButton();
@@ -112,32 +114,54 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 salvar.setBounds(175, 285, 120, 40);
                 salvar.setIcon(iconSave);
                 salvar.setHorizontalAlignment(SwingConstants.CENTER);
+                salvar.addActionListener(new ActionListener() { //MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                                ClientePJ clientePJ = new ClientePJ();
+
+                                sRazao = jtfRazao.getText();
+                                clientePJ.setRazao(sRazao);
+
+                                sCnpj = jtfCnpj.getText();
+                                clientePJ.setCnpj(sCnpj);
+
+                                sEmail = jtfEmail.getText();
+                                clientePJ.setEmail(sEmail);
+
+                                sContato = jtfContato.getText();
+                                clientePJ.setContato(sContato);
+
+                                sResponsavelLegal = jtfResponsavelLegal.getText();
+                                clientePJ.setResponsavel(sResponsavelLegal);
+
+                                new TelaAviso();
+
+
+                                
+                        }});
                 this.add(salvar);
 
                 voltar.setIcon(iconBack);
                 voltar.setBounds(10, 15, 40, 30);
-                salvar.addActionListener(new ActionListener() { //MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
+                // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
+                voltar.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                                sRazao = jtfRazao.getText();
-                                sCnpj = jtfCnpj.getText();
-                                sEmail = jtfEmail.getText();
-                                sContato = jtfContato.getText();
-                                sResponsavelLegal = jtfResponsavelLegal.getText();
-                                new TelaAviso("Cliente Salvo com sucesso!");
+                                NovoRegistroPJ.this.dispose();
+                                new NovoRegistro(); 
                         }});
                 this.add(voltar);
                 
         }
 
-        // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
-        public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == voltar) {
-                        this.dispose();
-                        NovoRegistro novoRegistro = new NovoRegistro();
 
-                }
-                
+        @Override
+        public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
         }
+
+        
+        
         
 }
