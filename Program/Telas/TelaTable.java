@@ -53,7 +53,7 @@ public class TelaTable extends Tela implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == voltar) {
             this.dispose();
-            Manuntencao manuntencao = new Manuntencao();
+            new Manuntencao();
         }
      }
 }

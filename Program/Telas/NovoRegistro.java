@@ -58,15 +58,15 @@ public class NovoRegistro extends Tela implements ActionListener{
     public void actionPerformed(ActionEvent e) {
        if(e.getSource() == PF){
             this.dispose();
-            NovoRegistroPF novoRegistroPF = new NovoRegistroPF();
+            new NovoRegistroPF();
        }
        if(e.getSource() == PJ){
             this.dispose();
-            NovoRegistroPJ novoRegistroPJ = new NovoRegistroPJ();
+            new NovoRegistroPJ();
        }
        if(e.getSource() == voltar){
             this.dispose();
-            Inicio telaMain = new Inicio();
+            new Inicio();
                    
        }
         

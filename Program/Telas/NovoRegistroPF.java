@@ -88,7 +88,7 @@ public class NovoRegistroPF extends Tela implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == voltar) {
             this.dispose();
-            NovoRegistro novoRegistro = new NovoRegistro();
+            new NovoRegistro();
         }
     }
 
