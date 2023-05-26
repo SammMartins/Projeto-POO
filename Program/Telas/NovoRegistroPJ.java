@@ -124,7 +124,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                                 sEmail = jtfEmail.getText();
                                 sContato = jtfContato.getText();
                                 sResponsavelLegal = jtfResponsavelLegal.getText();
-                                new TelaAviso("Texto coletado do textField: " + sRazao + " " + sCnpj + " " + sEmail + " " + sContato + " " + sResponsavelLegal + " ");
+                                new TelaAviso("Cliente Salvo com sucesso!");
                         }});
                 this.add(voltar);
                 

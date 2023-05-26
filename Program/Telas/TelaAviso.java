@@ -42,7 +42,7 @@ public class TelaAviso extends JFrame implements ActionListener {
         labelAviso.setText(formatarTextoAviso(textoAviso));
         labelAviso.setForeground(corLabel1);
         labelAviso.setBounds(10, 10,100,80);
-        labelAviso.setFont(new Font("Arial Black", Font.PLAIN, 8));
+        labelAviso.setFont(new Font("Arial Black", Font.PLAIN, 10));
         this.add(labelAviso);
 
 
