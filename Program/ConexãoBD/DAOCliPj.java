@@ -14,8 +14,8 @@ public class DAOCliPj {
     public void insert(ClientePJ pj) {
 
         String sql = "INSERT INTO clipj " +
-        "(razao, cnpj, email, contato, responsavel) " +
-           "VALUES (?,?,?,?,?)";
+                    "(razao, cnpj, email, contato, responsavel) " +
+                    "VALUES (?,?,?,?,?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, pj.getRazao());

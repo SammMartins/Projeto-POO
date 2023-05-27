@@ -4,8 +4,8 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import Program.Classes.ClientePJ;
 
+import Program.Classes.ClientePJ;
 
 public class NovoRegistroPJ extends Tela implements ActionListener {
         // Instancia de botoes
@@ -18,10 +18,9 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
         JTextField jtfContato = new JTextField();
         JTextField jtfResponsavelLegal = new JTextField();
         // Intancia de Variáveis para armazenamento das Strings
-        private String sRazao,sCnpj,sEmail,sContato,sResponsavelLegal;
+        private String sRazao, sCnpj, sEmail, sContato, sResponsavelLegal;
         // Intancia de um objeto da classe Cliente PJ
         public ClientePJ clientePJ = new ClientePJ();
-        
 
         public NovoRegistroPJ() {
                 this.setTitle("Cadastro Pessoa Jurídica");
@@ -114,7 +113,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 salvar.setBounds(175, 285, 120, 40);
                 salvar.setIcon(iconSave);
                 salvar.setHorizontalAlignment(SwingConstants.CENTER);
-                salvar.addActionListener(new ActionListener() { //MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
+                salvar.addActionListener(new ActionListener() { // MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
                         @Override
                         public void actionPerformed(ActionEvent e) {
 
@@ -133,11 +132,11 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                                 sResponsavelLegal = jtfResponsavelLegal.getText();
                                 clientePJ.setResponsavel(sResponsavelLegal);
 
-                                new TelaAvisoPJ(clientePJ);
-
-
+                                TelaAvisoPJ aviso = new TelaAvisoPJ(clientePJ);
                                 
-                        }});
+
+                        }
+                });
                 this.add(salvar);
 
                 voltar.setIcon(iconBack);
@@ -147,12 +146,12 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                                 NovoRegistroPJ.this.dispose();
-                                new NovoRegistro(); 
-                        }});
+                                new NovoRegistro();
+                        }
+                });
                 this.add(voltar);
-                
-        }
 
+        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -160,7 +159,4 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
         }
 
-        
-        
-        
 }
