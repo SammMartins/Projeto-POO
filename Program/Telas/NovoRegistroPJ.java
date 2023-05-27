@@ -9,6 +9,7 @@ import javax.swing.*;
 
 import Program.Classes.ClientePJ;
 
+
 public class NovoRegistroPJ extends Tela implements ActionListener {
         // Instancia de botoes
         JButton voltar = new JButton();
@@ -19,8 +20,10 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
         JTextField jtfEmail = new JTextField();
         JTextField jtfContato = new JTextField();
         JTextField jtfResponsavelLegal = new JTextField();
-        
+        // Intancia de Variáveis para armazenamento das Strings
         private String sRazao,sCnpj,sEmail,sContato,sResponsavelLegal;
+        // Intancia de um objeto da classe Cliente PJ
+        public ClientePJ clientePJ = new ClientePJ();
         
 
         public NovoRegistroPJ() {
@@ -117,7 +120,6 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 salvar.addActionListener(new ActionListener() { //MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                                ClientePJ clientePJ = new ClientePJ();
 
                                 sRazao = jtfRazao.getText();
                                 clientePJ.setRazao(sRazao);
