@@ -6,17 +6,20 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import Program.ConexãoBD.DAOCliPj;
-
 import javax.swing.*;
 import javax.swing.JFrame;
 
+import Program.Classes.ClientePJ;
+import Program.ConexãoBD.DAOCliPj;
 
-public class TelaAviso extends JFrame implements ActionListener {
-    public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
+public class TelaAvisoPJ extends JFrame implements ActionListener {
+    // Intancia de um objeto DAO do Cliente PJ
+    static DAOCliPj dpj = new DAOCliPj();
+
+    public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo
     public Color corFundo2 = new Color(37, 48, 54);
-    public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
-    public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
+    public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor da label
+    public Color corLabel2 = new Color(200,200,200);    
 
     JButton cancel = new JButton();
     JButton confirm = new JButton();
@@ -25,9 +28,7 @@ public class TelaAviso extends JFrame implements ActionListener {
     public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
     public ImageIcon iconEnviar = new ImageIcon("Images/enviar-bd.png");
 
-    public int retorno = 0;
-
-    public TelaAviso(){
+    public TelaAvisoPJ(ClientePJ pj){
         setTitle("AVISO");
         setVisible(true);                              //configura visibilidade da tela.
         setSize(250, 200);                 //configurando tamanho da tela.  
@@ -59,7 +60,7 @@ public class TelaAviso extends JFrame implements ActionListener {
         cancel.addActionListener(new ActionListener() { //MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
             @Override
             public void actionPerformed(ActionEvent e) {
-                    TelaAviso.this.dispose();
+                    TelaAvisoPJ.this.dispose();
                     new Inicio(); 
             }});
         this.add(cancel);
@@ -68,11 +69,11 @@ public class TelaAviso extends JFrame implements ActionListener {
         confirm.setHorizontalAlignment(SwingConstants.CENTER);
         confirm.setIcon(iconEnviar);
         confirm.addActionListener(this);
-        confirm.addActionListener(new ActionListener() { //MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
+        confirm.addActionListener(new ActionListener() { 
             @Override
             public void actionPerformed(ActionEvent e) {
-                new DAOCliPj();
-                TelaAviso.this.dispose();
+                dpj.insert(pj);
+                TelaAvisoPJ.this.dispose();
             }});
         this.add(confirm);
 

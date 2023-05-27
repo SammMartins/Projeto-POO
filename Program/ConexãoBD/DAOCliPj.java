@@ -11,18 +11,18 @@ public class DAOCliPj {
         conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", "bd_poo_ftc", "bcjrs_2023",
                 "Poo@2023");
     }
-    public void insert(ClientePJ p) {
+    public void insert(ClientePJ pj) {
 
-        String sql = "INSERT INTO clipj" +
-        "razao, cnpj, email, contato, responsavel" +
-           " VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO clipj " +
+        "(razao, cnpj, email, contato, responsavel) " +
+           "VALUES (?,?,?,?,?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, p.getRazao());
-            stmt.setString(2, p.getCnpj());
-            stmt.setString(3, p.getEmail());
-            stmt.setString(4, p.getContato());
-            stmt.setString(5, p.getResponsavel());
+            stmt.setString(1, pj.getRazao());
+            stmt.setString(2, pj.getCnpj());
+            stmt.setString(3, pj.getEmail());
+            stmt.setString(4, pj.getContato());
+            stmt.setString(5, pj.getResponsavel());
 
             stmt.execute();
             stmt.close();
