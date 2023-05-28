@@ -114,7 +114,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 salvar.setIcon(iconSave);
                 salvar.setHorizontalAlignment(SwingConstants.CENTER);
                 salvar.addActionListener(new ActionListener() { // MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
-                        @Override
+                        
                         public void actionPerformed(ActionEvent e) {
                                 salvar.setEnabled(false); // Desabilita o botão
 
@@ -133,20 +133,17 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                                 sResponsavelLegal = jtfResponsavelLegal.getText();
                                 clientePJ.setResponsavel(sResponsavelLegal);
 
+                                NovoRegistroPJ.this.dispose();                                
                                 new TelaAvisoPJ(clientePJ);
-                                NovoRegistroPJ.this.dispose();
-                                new NovoRegistro();
-                                
+                                         
                         }
                 });
                 this.add(salvar);
 
                 voltar.setIcon(iconBack);
                 voltar.setBounds(10, 15, 40, 30);
-                
                 // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
                 voltar.addActionListener(new ActionListener() {
-                        @Override
                         public void actionPerformed(ActionEvent e) {
                                 NovoRegistroPJ.this.dispose();
                                 new NovoRegistro();
