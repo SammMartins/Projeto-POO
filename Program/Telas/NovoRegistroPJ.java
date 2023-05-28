@@ -134,6 +134,8 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                                 clientePJ.setResponsavel(sResponsavelLegal);
 
                                 new TelaAvisoPJ(clientePJ);
+                                NovoRegistroPJ.this.dispose();
+                                new NovoRegistro();
                                 
                         }
                 });
