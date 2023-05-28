@@ -9,15 +9,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class TelaTable extends Tela implements ActionListener {
+public class TelaTablePJ extends Tela implements ActionListener {
 
     JButton voltar = new JButton();
-    JButton excluir = new JButton("Excluir");
+    JButton jbExcluir = new JButton("Excluir");
+    JButton jbAlterar = new JButton("Alterar");
     JTable table;
 
     public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
+    public ImageIcon iconAlterar = new ImageIcon("Images/enviar-bd.png");
 
-    public TelaTable() {
+    public TelaTablePJ() {
         // Configurações do JFrame
         setTitle("Resultado da Busca");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,15 +30,21 @@ public class TelaTable extends Tela implements ActionListener {
 
         // Configurações do Botão voltar
         voltar.setIcon(iconBack);
-        voltar.setBounds(10, 15, 40, 30);
+        voltar.setBounds(10, 15, 50, 30);
         voltar.addActionListener(this);
         this.add(voltar);
 
         // Configurações do Botão excluir
-        excluir.setBounds(70, 15, 40, 30);
-        excluir.addActionListener(this);
-        excluir.setIcon(iconCancel);
-        add(excluir);
+        jbExcluir.setBounds(80, 15, 100, 30);
+        jbExcluir.addActionListener(this);
+        jbExcluir.setIcon(iconCancel);
+        add(jbExcluir);
+
+        // Configurações do Botão alterar
+        jbAlterar.setBounds(190, 15, 100, 30);
+        jbAlterar.addActionListener(this);
+        jbAlterar.setIcon(iconAlterar);
+        add(jbAlterar);
 
         // Criação do DefaultTableModel com as colunas desejadas
         DefaultTableModel model = new DefaultTableModel();
@@ -44,7 +52,7 @@ public class TelaTable extends Tela implements ActionListener {
         model.addColumn("CNPJ");
         model.addColumn("Email");
         model.addColumn("Contato");
-        model.addColumn("Responsável");
+        model.addColumn("Responsável Legal");
 
         // Criação do JTable com o DefaultTableModel
         table = new JTable(model);
@@ -72,7 +80,7 @@ public class TelaTable extends Tela implements ActionListener {
         if (e.getSource() == voltar) {
             this.dispose();
             new Manuntencao();
-        } else if (e.getSource() == excluir) {
+        } else if (e.getSource() == jbExcluir) {
             int selectedRow = table.getSelectedRow();
             if (selectedRow != -1) {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -83,6 +91,20 @@ public class TelaTable extends Tela implements ActionListener {
                 List<ClientePJ> clientes = daoCPJ.lista();
                 ClientePJ cliente = clientes.get(selectedRow);
                 daoCPJ.excluir(cliente);
+            }
+        } else if (e.getSource() == jbAlterar) {
+            int selectedRow = table.getSelectedRow();
+            if (selectedRow != -1) {
+                DAOCliPj daoCPJ = new DAOCliPj();
+                DefaultTableModel model = (DefaultTableModel) table.getModel();
+                ClientePJ cliente = new ClientePJ();
+                cliente.setRazao((String) model.getValueAt(selectedRow, 0));
+                cliente.setCnpj((String) model.getValueAt(selectedRow, 1));
+                cliente.setEmail((String) model.getValueAt(selectedRow, 2));
+                cliente.setContato((String) model.getValueAt(selectedRow, 3));
+                cliente.setResponsavel((String) model.getValueAt(selectedRow, 4));
+
+                daoCPJ.altera(cliente, getName());
             }
         }
     }

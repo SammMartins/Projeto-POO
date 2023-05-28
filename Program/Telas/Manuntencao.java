@@ -54,7 +54,7 @@ public class Manuntencao extends Tela implements ActionListener {
         }
         if (e.getSource() == MTPJ) {
             this.dispose();
-            new TelaTable();
+            new TelaTablePJ();
         }
         if (e.getSource() == voltar) {
             this.dispose();
