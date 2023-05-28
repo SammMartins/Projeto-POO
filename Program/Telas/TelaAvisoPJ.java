@@ -58,6 +58,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
                 cancel.setEnabled(false);
                 
                 TelaAvisoPJ.this.dispose();
+                new NovoRegistroPJ();
             }
         });
         this.add(cancel);
@@ -73,7 +74,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
                 confirm.setEnabled(false);
                 dpj.insert(pj);
                 TelaAvisoPJ.this.dispose();
-                new NovoRegistro();
+                new NovoRegistroPJ();
             }
         });
         this.add(confirm);
