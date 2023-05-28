@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class TelaTablePF extends Tela implements ActionListener {
+public class TelaTablePF extends JFrame implements ActionListener {
 
     JButton voltar = new JButton();
     JButton jbExcluir = new JButton("Excluir");
@@ -32,11 +32,20 @@ public class TelaTablePF extends Tela implements ActionListener {
         
     public TelaTablePF() {
         setTitle("Resultado da Busca");
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
         setSize(1000, 500);
+        setLocationRelativeTo(null);
+
+        JPanel panel = new JPanel();
+        panel.setBackground(corPanel);
+        panel.setVisible(true);
+        panel.setBounds(0, 0, 60, 1000);
+        this.add(panel);
+        
 
 
         // Configurações do Botão voltar
@@ -51,7 +60,7 @@ public class TelaTablePF extends Tela implements ActionListener {
         jbExcluir.addActionListener(this);
         jbExcluir.setIcon(iconCancel);
 
-        add(jbExcluir);
+        this.add(jbExcluir);
 
         // Configurações do Botão alterar
         jbAlterar.setBounds(730, 405, 100, 30);
@@ -70,8 +79,10 @@ public class TelaTablePF extends Tela implements ActionListener {
 
         // Criação do JScrollPane com o JTable
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(25, 65, 625, 250);
-        add(scrollPane);
+        scrollPane.setBounds(75, 55, 900, 340);
+        scrollPane.setAutoscrolls(true);
+
+        this.add(scrollPane);
 
         // Preenchimento do DefaultTableModel com os dados do banco de dados
         DAOCliPf daoCPF = new DAOCliPf();
@@ -83,6 +94,7 @@ public class TelaTablePF extends Tela implements ActionListener {
             rowData[2] = cliente.getContato();
             model.addRow(rowData);
         }
+        setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
