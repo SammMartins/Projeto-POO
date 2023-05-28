@@ -53,8 +53,8 @@ public class TelaTablePF extends Tela implements ActionListener {
         add(scrollPane);
 
         // Preenchimento do DefaultTableModel com os dados do banco de dados
-        DAOCliPf daoCPJ = new DAOCliPf();
-        List<ClientePF> clientes = daoCPJ.lista();
+        DAOCliPf daoCPF = new DAOCliPf();
+        List<ClientePF> clientes = daoCPF.lista();
         for (ClientePF cliente : clientes) {
             Object[] rowData = new Object[3];
             rowData[0] = cliente.getNome();
