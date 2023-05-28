@@ -64,12 +64,11 @@ public class DAOCliPj {
 
             while (rs.next()) {
                 ClientePJ c = new ClientePJ();
-                c.setRazao(rs.getString("Razao"));
-                c.setCnpj(rs.getString("Cnpj"));
-                c.setEmail(rs.getString("Email"));
-                c.setContato(rs.getString("Contato"));
-                c.setResponsavel(rs.getString("Responsavel"));
-
+                c.setRazao(rs.getString("razao"));
+                c.setCnpj(rs.getString("cnpj"));
+                c.setEmail(rs.getString("email"));
+                c.setContato(rs.getString("contato"));
+                c.setResponsavel(rs.getString("responsavel"));
                 clientes.add(c);
             }
             rs.close();
@@ -79,6 +78,8 @@ public class DAOCliPj {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        
     }
     public void altera(ClientePJ c, String n) {
         String sql = "update clipj set" + "razao=?, cnpj=?, email=?, contato=?, responsavel=?" + "where nome=?";

@@ -59,7 +59,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
         cancel.addActionListener(new ActionListener() { // MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                cancel.setEnabled(false);
                 TelaAvisoPJ.this.dispose();
 
             }
@@ -73,6 +73,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
         confirm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                confirm.setEnabled(false);
                 dpj.insert(pj);
                 TelaAvisoPJ.this.dispose();
             }

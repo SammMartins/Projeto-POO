@@ -116,6 +116,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                 salvar.addActionListener(new ActionListener() { // MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
                         @Override
                         public void actionPerformed(ActionEvent e) {
+                                salvar.setEnabled(false); // Desabilita o botão
 
                                 sRazao = jtfRazao.getText();
                                 clientePJ.setRazao(sRazao);
@@ -134,7 +135,6 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
 
                                 new TelaAvisoPJ(clientePJ);
                                 
-
                         }
                 });
                 this.add(salvar);
