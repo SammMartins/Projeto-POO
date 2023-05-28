@@ -133,14 +133,27 @@ public class TelaTablePJ extends JFrame implements ActionListener {
                 cliente.setContato((String) model.getValueAt(selectedRow, 3));
                 cliente.setResponsavel((String) model.getValueAt(selectedRow, 4));
 
+                // Abre uma nova janela de edição para o cliente selecionado
+                TelaAlteracaoPJ telaAlteracao = new TelaAlteracaoPJ(cliente);
+                telaAlteracao.setVisible(true);
+                telaAlteracao.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                        // Verifica se a janela de edição foi fechada com as alterações salvas
+                        if (telaAlteracao.isSaved()) {
+                            ClientePJ clienteAlterado = telaAlteracao.getCliente();
+                            // Atualiza os dados no banco de dados
+                            daoCPJ.altera(clienteAlterado, cliente.getRazao());
 
-                    // Atualiza os dados no banco de dados
-                    daoCPJ.altera(cliente, cliente.getRazao());
-
-                    // Atualiza a tabela com os novos dados
-                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                
-
+                            // Atualiza a tabela com os novos dados
+                            model.setValueAt(clienteAlterado.getRazao(), selectedRow, 0);
+                            model.setValueAt(clienteAlterado.getCnpj(), selectedRow, 1);
+                            model.setValueAt(clienteAlterado.getEmail(), selectedRow, 2);
+                            model.setValueAt(clienteAlterado.getContato(), selectedRow, 3);
+                            model.setValueAt(clienteAlterado.getResponsavel(), selectedRow, 4);
+                        }
+                    }
+                });
             }
         }
     }
