@@ -10,10 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TelaAlteracaoPJ extends JFrame implements ActionListener {
-    public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
+    public Color corFundo1 = new Color(27, 38, 44); // definindo a cor de fundo em um objeto
     public Color corPanel = new Color(15, 76, 117);
-    public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
-    public Color corLabel2 = new Color(200,200,200); 
+    public Color corLabel1 = new Color(187, 225, 250); // definindo a cor de fundo em um objeto
+    public Color corLabel2 = new Color(200, 200, 200);
 
     private ClientePJ cliente;
     private boolean isSaved;
@@ -31,8 +31,6 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
     private JButton btnCancelar;
 
     public TelaAlteracaoPJ(ClientePJ cliente) {
-           //definindo a cor de fundo em um objeto
-
         this.cliente = cliente;
         this.isSaved = false;
         this.dao = new DAOCliPj();
@@ -116,11 +114,12 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSalvar) {
             ClientePJ clienteAlterado = getCliente();
-            dao.altera(clienteAlterado, cliente.getRazao());
+            dao.altera(clienteAlterado, cliente.getCnpj());
             isSaved = true;
             dispose();
         } else if (e.getSource() == btnCancelar) {
             dispose();
         }
     }
+
 }
