@@ -9,15 +9,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class TelaTable extends Tela implements ActionListener {
+public class TelaTablePJ extends Tela implements ActionListener {
 
     JButton voltar = new JButton();
-    JButton excluir = new JButton("Excluir");
+    JButton jbExcluir = new JButton("Excluir");
+    JButton jbAlterar = new JButton("Alterar");
     JTable table;
 
     public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
 
-    public TelaTable() {
+    public TelaTablePJ() {
         // Configurações do JFrame
         setTitle("Resultado da Busca");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,7 +79,7 @@ public class TelaTable extends Tela implements ActionListener {
         if (e.getSource() == voltar) {
             this.dispose();
             new Manuntencao();
-        } else if (e.getSource() == excluir) {
+        } else if (e.getSource() == jbExcluir) {
             int selectedRow = table.getSelectedRow();
             if (selectedRow != -1) {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
