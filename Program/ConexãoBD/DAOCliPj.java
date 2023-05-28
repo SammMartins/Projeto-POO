@@ -86,19 +86,19 @@ public class DAOCliPj {
 
     public void altera(ClientePJ c, String n) {
         String sql = "update clipj set" + 
-                     " razao=?, cnpj=?, email=?, contato=?, responsavel=?" + 
-                     " where razao=?"; // Alterei "nome=?" para "razao=?" pois a coluna no banco de dados é "razao"
+                     "razao=?, cnpj=?, email=?, contato=?, responsavel=?" + 
+                     "where nome=?";
 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, c.getRazao());
             stmt.setString(2, c.getCnpj());
             stmt.setString(3, c.getEmail());
-            stmt.setString(4, c.getContato());
-            stmt.setString(5, c.getResponsavel());
-            stmt.setString(6, n);
+            stmt.setString(3, c.getContato());
+            stmt.setString(3, c.getResponsavel());
+            stmt.setString(4, n);
 
-            stmt.executeUpdate(); // Use executeUpdate() em vez de execute()
+            stmt.execute();
             stmt.close();
 
         } catch (SQLException e) {

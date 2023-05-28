@@ -104,17 +104,7 @@ public class TelaTablePJ extends Tela implements ActionListener {
                 cliente.setContato((String) model.getValueAt(selectedRow, 3));
                 cliente.setResponsavel((String) model.getValueAt(selectedRow, 4));
 
-                // Exibe uma caixa de diálogo para editar os dados do cliente
-                String razao = JOptionPane.showInputDialog("Digite a nova Razão Social:", cliente.getRazao());
-                if (razao != null) { // Verifica se o usuário clicou em "Cancelar"
-                    cliente.setRazao(razao);
-
-                    // Atualiza os dados no banco de dados
-                    daoCPJ.altera(cliente, cliente.getRazao());
-
-                    // Atualiza a tabela com os novos dados
-                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                }
+                daoCPJ.altera(cliente, getName());
             }
         }
     }
