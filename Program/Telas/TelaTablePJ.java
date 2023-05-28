@@ -103,11 +103,13 @@ public class TelaTablePJ extends Tela implements ActionListener {
                 cliente.setContato((String) model.getValueAt(selectedRow, 3));
                 cliente.setResponsavel((String) model.getValueAt(selectedRow, 4));
 
-                // Atualiza os dados no banco de dados
-                daoCPJ.altera(cliente, cliente.getRazao());
 
-                // Atualiza a tabela com os novos dados
-                model.setValueAt(cliente.getRazao(), selectedRow, 0);
+                    // Atualiza os dados no banco de dados
+                    daoCPJ.altera(cliente, cliente.getRazao());
+
+                    // Atualiza a tabela com os novos dados
+                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
+                
 
             }
         }
