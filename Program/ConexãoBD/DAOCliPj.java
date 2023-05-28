@@ -94,9 +94,9 @@ public class DAOCliPj {
             stmt.setString(1, c.getRazao());
             stmt.setString(2, c.getCnpj());
             stmt.setString(3, c.getEmail());
-            stmt.setString(3, c.getContato());
-            stmt.setString(3, c.getResponsavel());
-            stmt.setString(4, n);
+            stmt.setString(4, c.getContato());
+            stmt.setString(5, c.getResponsavel());
+            stmt.setString(6, n);
 
             stmt.execute();
             stmt.close();

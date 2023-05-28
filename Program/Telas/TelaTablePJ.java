@@ -103,51 +103,13 @@ public class TelaTablePJ extends Tela implements ActionListener {
                 cliente.setContato((String) model.getValueAt(selectedRow, 3));
                 cliente.setResponsavel((String) model.getValueAt(selectedRow, 4));
 
-                // Exibe caixas de diálogo para editar os dados do cliente
-                String razao = JOptionPane.showInputDialog("Digite a nova Razão Social:", cliente.getRazao());
-                if (razao != null) { // Verifica se o usuário clicou em "Cancelar"
-                    cliente.setRazao(razao);
+
                     // Atualiza os dados no banco de dados
                     daoCPJ.altera(cliente, cliente.getRazao());
-                    // Atualiza a tabela com os novos dados
-                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                }
 
-                String cnpj = JOptionPane.showInputDialog("Digite a nova Razão Social:", cliente.getRazao());
-                if (razao != null) { // Verifica se o usuário clicou em "Cancelar"
-                    cliente.setRazao(razao);
-                    // Atualiza os dados no banco de dados
-                    daoCPJ.altera(cliente, cliente.getRazao());
                     // Atualiza a tabela com os novos dados
                     model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                }
-
-                String email = JOptionPane.showInputDialog("Digite a nova Razão Social:", cliente.getEmail());
-                if (razao != null) { // Verifica se o usuário clicou em "Cancelar"
-                    cliente.setEmail(email);
-                    // Atualiza os dados no banco de dados
-                    daoCPJ.altera(cliente, cliente.getEmail());
-                    // Atualiza a tabela com os novos dados
-                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                }
-
-                String contato = JOptionPane.showInputDialog("Digite a nova Razão Social:", cliente.getRazao());
-                if (razao != null) { // Verifica se o usuário clicou em "Cancelar"
-                    cliente.setRazao(razao);
-                    // Atualiza os dados no banco de dados
-                    daoCPJ.altera(cliente, cliente.getRazao());
-                    // Atualiza a tabela com os novos dados
-                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                }
-
-                String responsavel = JOptionPane.showInputDialog("Digite a nova Razão Social:", cliente.getRazao());
-                if (razao != null) { // Verifica se o usuário clicou em "Cancelar"
-                    cliente.setRazao(razao);
-                    // Atualiza os dados no banco de dados
-                    daoCPJ.altera(cliente, cliente.getRazao());
-                    // Atualiza a tabela com os novos dados
-                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                }
+                
 
             }
         }
