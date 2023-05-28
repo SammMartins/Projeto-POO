@@ -12,7 +12,7 @@ public class DAOCliPf {
         "bd_poo_ftc", "bcjrs_2023","Poo@2023");
     }
     public void insert(ClientePF c) {
-        String sql = "INSERT INTO cliPF" +
+        String sql = "INSERT INTO clipf" +
                 "(nome, cpf, contato)" +
                 " VALUES(?,?,?)";
         try {
@@ -53,7 +53,7 @@ public class DAOCliPf {
     public List<ClientePF> lista() {
         try {
             List<ClientePF> clipf = new ArrayList<ClientePF>();
-            PreparedStatement stmt = conexao.prepareStatement("select * from Pessoa");
+            PreparedStatement stmt = conexao.prepareStatement("select * from clipf");
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
@@ -72,7 +72,7 @@ public class DAOCliPf {
         }
     }
     public void altera(ClientePF c, String s){
-        String sql = "update CliPF set" + "nome=?, cpf=?, contato=?" + "where nome=?";
+        String sql = "update clipf set" + "nome=?, cpf=?, contato=?" + "where nome=?";
     
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
