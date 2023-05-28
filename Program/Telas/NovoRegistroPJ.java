@@ -143,7 +143,6 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
 
                 voltar.setIcon(iconBack);
                 voltar.setBounds(10, 15, 40, 30);
-                
                 // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
                 voltar.addActionListener(new ActionListener() {
                         @Override
@@ -158,7 +157,8 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
         }
 
 }

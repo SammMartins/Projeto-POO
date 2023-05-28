@@ -12,7 +12,7 @@ public class DAOCliPf {
         "bd_poo_ftc", "bcjrs_2023","Poo@2023");
     }
     public void insert(ClientePF c) {
-        String sql = "INSERT INTO clipf" +
+        String sql = "INSERT INTO cliPF" +
                 "(nome, cpf, contato)" +
                 " VALUES(?,?,?)";
         try {
@@ -53,7 +53,7 @@ public class DAOCliPf {
     public List<ClientePF> lista() {
         try {
             List<ClientePF> clipf = new ArrayList<ClientePF>();
-            PreparedStatement stmt = conexao.prepareStatement("select * from clipf");
+            PreparedStatement stmt = conexao.prepareStatement("select * from Pessoa");
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
@@ -72,7 +72,7 @@ public class DAOCliPf {
         }
     }
     public void altera(ClientePF c, String s){
-        String sql = "update clipf set" + "nome=?, cpf=?, contato=?" + "where nome=?";
+        String sql = "update CliPF set" + "nome=?, cpf=?, contato=?" + "where nome=?";
     
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -83,19 +83,6 @@ public class DAOCliPf {
             stmt.execute();
             stmt.close();
     
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    public void excluir(ClientePF pf) {
-        String sql = "DELETE FROM clipf WHERE cpf = ?";
-        try {
-            PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, pf.getCPF());
-            stmt.executeUpdate();
-            stmt.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
