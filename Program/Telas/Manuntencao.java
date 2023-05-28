@@ -49,7 +49,7 @@ public class Manuntencao extends Tela implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == MTPF) {
             this.dispose();
-        new ManuntencaoPF();
+        new TelaTablePF();
 
         }
         if (e.getSource() == MTPJ) {
