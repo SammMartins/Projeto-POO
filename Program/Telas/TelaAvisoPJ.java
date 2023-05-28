@@ -32,13 +32,13 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
 
     public TelaAvisoPJ(ClientePJ pj) {
         setTitle("Confirmação");
-        setVisible(true); // configura visibilidade da tela.
-        setSize(300, 200); // configurando tamanho da tela.
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // definindo operação de fechamento de tela.
-        setResizable(false); // impossibilita o redimensionamento da tela.
-        setLocationRelativeTo(null); // configura a localização de nascimento da tela
-        setLayout(null); // "reseta" o layout da tela.
-        getContentPane().setBackground(corFundo1); // Define cor de fundo da tela.
+        setVisible(true); 
+        setSize(300, 200);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false); 
+        setLocationRelativeTo(null); 
+        setLayout(null);
+        getContentPane().setBackground(corFundo1);
 
         JLabel labelAviso = new JLabel();
         labelAviso.setText("Salvar novo registro?");
@@ -56,7 +56,6 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
             
             public void actionPerformed(ActionEvent e) {
                 cancel.setEnabled(false);
-                
                 TelaAvisoPJ.this.dispose();
                 new NovoRegistroPJ();
             }
@@ -78,6 +77,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
             }
         });
         this.add(confirm);
+        //teste
 
     }
     public void actionPerformed(ActionEvent e) {
