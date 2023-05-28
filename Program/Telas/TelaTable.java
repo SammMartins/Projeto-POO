@@ -11,14 +11,16 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Vector;
 
 public class TelaTable extends Tela implements ActionListener {
-    DefaultTableModel model = new DefaultTableModel();
-    JTable table = new JTable(model);
 
     JButton voltar = new JButton();
 
     public TelaTable() {
+        // Criação do JTable
+        JTable table = new JTable();
+
         // Configurações do JFrame
         setTitle("Resultado da Busca");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +29,7 @@ public class TelaTable extends Tela implements ActionListener {
         getContentPane().setBackground(corFundo1);
 
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(45, 70, 400, 400); 
+        scrollPane.setBounds(45, 70, 400, 400);
         add(scrollPane);
         // Configurações do Botão
         voltar.setIcon(iconBack);
@@ -36,42 +38,21 @@ public class TelaTable extends Tela implements ActionListener {
         this.add(voltar);
 
         // Criação do DefaultTableModel
-        model = new DefaultTableModel();
-
-        // Criação do JTable
-        table = new JTable(model);
+        DefaultTableModel modelo = (DefaultTableModel) table.getModel();
 
         // Definição das colunas da tabela
-        model.addColumn("Razão Social");
-        model.addColumn("CNPJ");
-        model.addColumn("Email");
-        model.addColumn("Contato");
-        model.addColumn("Responsável");
+        DAOCliPj daoCPJ = new DAOCliPj();
+        for (ClientePJ pj : daoCPJ.lista()) {
 
-        // Outras configurações e componentes do JFrame
+            modelo.addRow(new Object[] {
+                    pj.getRazao(),
+                    pj.getCnpj(),
+                    pj.getEmail(),
+                    pj.getContato(),
+                    pj.getResponsavel()
+            });
+            System.out.println(pj.getCnpj()+pj.getRazao());
 
-        // Adicionar o JScrollPane com a tabela ao JFrame
-        
-        getContentPane().add(scrollPane);
-
-        setLocationRelativeTo(null);
-
-        preencherTabela();
-    }
-
-    public void preencherTabela() {
-        DAOCliPj dao = new DAOCliPj();
-        List<ClientePJ> clientes = dao.lista();
-
-        for (ClientePJ cliente : clientes) {
-            Object[] rowData = new Object[5];
-            rowData[0] = cliente.getRazao();
-            rowData[1] = cliente.getCnpj();
-            rowData[2] = cliente.getEmail();
-            rowData[3] = cliente.getContato();
-            rowData[4] = cliente.getResponsavel();
-
-            model.addRow(rowData);
         }
     }
 
