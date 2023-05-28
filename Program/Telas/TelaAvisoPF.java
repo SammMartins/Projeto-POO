@@ -21,38 +21,35 @@ public class TelaAvisoPF extends JFrame implements ActionListener {
     public Color corFundo2 = new Color(37, 48, 54);
     public Color corLabel1 = new Color(187, 225, 250); // definindo a cor da label
     public Color corLabel2 = new Color(200, 200, 200);
+    public Color branco = new Color(255,255,255);
 
     JButton cancel = new JButton();
     JButton confirm = new JButton();
 
-    public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
+
+    public ImageIcon iconCancel = new ImageIcon("Images/cancel2.png");
     public ImageIcon iconEnviar = new ImageIcon("Images/enviar-bd.png");
 
     public TelaAvisoPF(ClientePF pf) {
-        setTitle("AVISO");
-        setVisible(true); // configura visibilidade da tela.
-        setSize(250, 200); // configurando tamanho da tela.
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // definindo operação de fechamento de tela.
-        setResizable(false); // impossibilita o redimensionamento da tela.
-        setLocationRelativeTo(null); // configura a localização de nascimento da tela
-        setLayout(null); // "reseta" o layout da tela.
-        getContentPane().setBackground(corFundo1); // Define cor de fundo da tela.
-
-        JPanel panel = new JPanel();
-        panel.setBackground(corFundo1);
-        panel.setVisible(true);
-        panel.setBounds(0, 0, 1000, 60);
-        this.add(panel);
+        setTitle("Confirmação");
+        setVisible(true); 
+        setSize(300, 200);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false); 
+        setLocationRelativeTo(null); 
+        setLayout(null);
+        getContentPane().setBackground(corFundo1);
 
         JLabel labelAviso = new JLabel();
-        labelAviso.setText("Concluído!");
-        labelAviso.setForeground(corLabel1);
-        labelAviso.setBounds(10, 10, 200, 200);
-        labelAviso.setFont(new Font("Arial Black", Font.PLAIN, 10));
+        labelAviso.setText("Salvar novo registro?");
+        labelAviso.setForeground(branco);
+        labelAviso.setBounds(70, -50, 200, 200);
+        labelAviso.setFont(new Font("Arial", Font.PLAIN, 15));
         this.add(labelAviso);
 
-        cancel.setBounds(40, 100, 42, 42);
+        cancel.setBounds(80, 80, 35, 35);
         cancel.setHorizontalAlignment(SwingConstants.CENTER);
+        cancel.setBackground(branco);
         cancel.setIcon(iconCancel);
         cancel.addActionListener(this);
         cancel.addActionListener(new ActionListener() { // MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
@@ -65,8 +62,9 @@ public class TelaAvisoPF extends JFrame implements ActionListener {
         });
         this.add(cancel);
 
-        confirm.setBounds(140, 100, 42, 42);
+        confirm.setBounds(150, 80, 35, 35);
         confirm.setHorizontalAlignment(SwingConstants.CENTER);
+        confirm.setBackground(new Color(6,185,57));
         confirm.setIcon(iconEnviar);
         confirm.addActionListener(this);
         confirm.addActionListener(new ActionListener() {

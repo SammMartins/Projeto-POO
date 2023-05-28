@@ -103,7 +103,7 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
                 new TelaAvisoPF(clientePF);
                 NovoRegistroPF.this.dispose();
-                new NovoRegistro();
+                
 
             }
 
