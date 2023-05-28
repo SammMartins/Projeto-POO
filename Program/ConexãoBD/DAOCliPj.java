@@ -11,11 +11,12 @@ public class DAOCliPj {
         conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", "bd_poo_ftc", "bcjrs_2023",
                 "Poo@2023");
     }
+
     public void insert(ClientePJ pj) {
 
         String sql = "INSERT INTO clipj " +
-                    "(razao, cnpj, email, contato, responsavel) " +
-                    "VALUES (?,?,?,?,?)";
+                "(razao, cnpj, email, contato, responsavel) " +
+                "VALUES (?,?,?,?,?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, pj.getRazao());
@@ -30,6 +31,7 @@ public class DAOCliPj {
             throw new RuntimeException(e);
         }
     }
+
     public ClientePJ busca(String n) {
         ClientePJ p = new ClientePJ();
         try {
@@ -56,6 +58,7 @@ public class DAOCliPj {
             throw new RuntimeException(e);
         }
     }
+
     public List<ClientePJ> lista() {
         try {
             List<ClientePJ> clientes = new ArrayList<ClientePJ>();
@@ -79,8 +82,8 @@ public class DAOCliPj {
             throw new RuntimeException(e);
         }
 
-        
     }
+
     public void altera(ClientePJ c, String n) {
         String sql = "update clipj set" + "razao=?, cnpj=?, email=?, contato=?, responsavel=?" + "where nome=?";
 
@@ -96,6 +99,18 @@ public class DAOCliPj {
             stmt.execute();
             stmt.close();
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void excluir(ClientePJ pj) {
+        String sql = "DELETE FROM clipj WHERE cnpj = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, pj.getCnpj());
+            stmt.executeUpdate();
+            stmt.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
