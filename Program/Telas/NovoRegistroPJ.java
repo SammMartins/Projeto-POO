@@ -132,7 +132,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
                                 sResponsavelLegal = jtfResponsavelLegal.getText();
                                 clientePJ.setResponsavel(sResponsavelLegal);
 
-                                TelaAvisoPJ aviso = new TelaAvisoPJ(clientePJ);
+                                new TelaAvisoPJ(clientePJ);
                                 
 
                         }

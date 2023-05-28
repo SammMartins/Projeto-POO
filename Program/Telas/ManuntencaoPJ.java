@@ -118,11 +118,11 @@ public class ManuntencaoPJ extends Tela implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == voltar) {
             this.dispose();
-            Manuntencao manuntencao = new Manuntencao();
+            new Manuntencao();
         }
         if (e.getSource() == pesquisarpj) {
             this.dispose();
-            TelaTable table = new TelaTable();
+            new TelaTable();
         }
     }
 }

@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class TelaTable extends Tela implements ActionListener{
+public class TelaTable extends Tela implements ActionListener {
     DefaultTableModel model = new DefaultTableModel();
     JTable table = new JTable(model);
 
@@ -25,17 +25,19 @@ public class TelaTable extends Tela implements ActionListener{
         setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
+
+        JScrollPane scrollPane = new JScrollPane(table);
+        scrollPane.setBounds(45, 70, 400, 400); 
+        add(scrollPane);
         // Configurações do Botão
         voltar.setIcon(iconBack);
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
 
-
-
         // Criação do DefaultTableModel
         model = new DefaultTableModel();
-        
+
         // Criação do JTable
         table = new JTable(model);
 
@@ -49,17 +51,18 @@ public class TelaTable extends Tela implements ActionListener{
         // Outras configurações e componentes do JFrame
 
         // Adicionar o JScrollPane com a tabela ao JFrame
-        JScrollPane scrollPane = new JScrollPane(table);
+        
         getContentPane().add(scrollPane);
 
-        
         setLocationRelativeTo(null);
+
+        preencherTabela();
     }
 
     public void preencherTabela() {
         DAOCliPj dao = new DAOCliPj();
         List<ClientePJ> clientes = dao.lista();
-    
+
         for (ClientePJ cliente : clientes) {
             Object[] rowData = new Object[5];
             rowData[0] = cliente.getRazao();
@@ -67,16 +70,15 @@ public class TelaTable extends Tela implements ActionListener{
             rowData[2] = cliente.getEmail();
             rowData[3] = cliente.getContato();
             rowData[4] = cliente.getResponsavel();
-    
+
             model.addRow(rowData);
         }
     }
-
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == voltar) {
             this.dispose();
             new Manuntencao();
         }
-     }
+    }
 }
