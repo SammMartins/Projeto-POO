@@ -49,16 +49,16 @@ public class Manuntencao extends Tela implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == MTPF) {
             this.dispose();
-            ManuntencaoPF manuntencaoPF = new ManuntencaoPF();
+        new ManuntencaoPF();
 
         }
         if (e.getSource() == MTPJ) {
             this.dispose();
-            ManuntencaoPJ manuntencaoPJ = new ManuntencaoPJ();
+            new TelaTable();
         }
         if (e.getSource() == voltar) {
             this.dispose();
-            Inicio inicio = new Inicio();    
+         new Inicio();    
         }
     }
 }
