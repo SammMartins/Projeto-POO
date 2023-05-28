@@ -87,7 +87,7 @@ public class DAOCliPj {
     public void altera(ClientePJ c, String n) {
         String sql = "update clipj set" + 
                      " razao=?, cnpj=?, email=?, contato=?, responsavel=?" + 
-                     " where razao=?"; 
+                     " where razao=?"; // Alterei "nome=?" para "razao=?" pois a coluna no banco de dados é "razao"
 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
