@@ -5,89 +5,55 @@ import Program.ConexãoBD.DAOCliPj;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class TelaTablePJ extends JFrame implements ActionListener {
+public class TelaTablePJ extends Tela implements ActionListener {
 
     JButton voltar = new JButton();
     JButton jbExcluir = new JButton("Excluir");
     JButton jbAlterar = new JButton("Alterar");
     JTable table;
- 
-    public ImageIcon iconSave = new ImageIcon("Images/save.png");
-    public ImageIcon iconPF = new ImageIcon("Images/PF.png");
-    public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
-    public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
 
-    //------------------------Criação de Cores-----------------------------------------------------------
-    public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
-    public Color corPanel = new Color(15, 76, 117);
-    public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
-    public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
     public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
+    public ImageIcon iconAlterar = new ImageIcon("Images/enviar-bd.png");
 
     public TelaTablePJ() {
+        // Configurações do JFrame
         setTitle("Resultado da Busca");
-        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
-        setSize(1000, 500);
-        setLocationRelativeTo(null);
-        
-
-        JPanel panel = new JPanel();
-        panel.setBackground(corPanel);
-        panel.setVisible(true);
-        panel.setBounds(0, 0, 60, 1000);
-        this.add(panel);
-        
+        setSize(700, 400);
 
         // Configurações do Botão voltar
         voltar.setIcon(iconBack);
-        voltar.setBounds(10, 15, 40, 30);
+        voltar.setBounds(10, 15, 50, 30);
         voltar.addActionListener(this);
         this.add(voltar);
 
         // Configurações do Botão excluir
-        jbExcluir.setBounds(850, 405, 110, 30);
-        jbExcluir.setHorizontalTextPosition(SwingConstants.LEFT);
+        jbExcluir.setBounds(70, 15, 40, 30);
         jbExcluir.addActionListener(this);
         jbExcluir.setIcon(iconCancel);
-        
-        this.add(jbExcluir);
-
-        // Configurações do Botão alterar
-        jbAlterar.setBounds(730, 405, 100, 30);
-        jbAlterar.addActionListener(this);
-        // jbAlterar.setIcon(iconAlterar);
-        add(jbAlterar);
+        add(jbExcluir);
 
         // Criação do DefaultTableModel com as colunas desejadas
         DefaultTableModel model = new DefaultTableModel();
-        
         model.addColumn("Razão Social");
         model.addColumn("CNPJ");
         model.addColumn("Email");
         model.addColumn("Contato");
         model.addColumn("Responsável");
-        
 
         // Criação do JTable com o DefaultTableModel
         table = new JTable(model);
-        
 
         // Criação do JScrollPane com o JTable
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(75, 55, 900, 340);
-        scrollPane.setAutoscrolls(true);
-        
-        
+        scrollPane.setBounds(25, 65, 625, 250);
         add(scrollPane);
 
         // Preenchimento do DefaultTableModel com os dados do banco de dados
@@ -102,7 +68,6 @@ public class TelaTablePJ extends JFrame implements ActionListener {
             rowData[4] = cliente.getResponsavel();
             model.addRow(rowData);
         }
-        setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -120,27 +85,6 @@ public class TelaTablePJ extends JFrame implements ActionListener {
                 List<ClientePJ> clientes = daoCPJ.lista();
                 ClientePJ cliente = clientes.get(selectedRow);
                 daoCPJ.excluir(cliente);
-            }
-        } else if (e.getSource() == jbAlterar) {
-            int selectedRow = table.getSelectedRow();
-            if (selectedRow != -1) {
-                DAOCliPj daoCPJ = new DAOCliPj();
-                DefaultTableModel model = (DefaultTableModel) table.getModel();
-                ClientePJ cliente = new ClientePJ();
-                cliente.setRazao((String) model.getValueAt(selectedRow, 0));
-                cliente.setCnpj((String) model.getValueAt(selectedRow, 1));
-                cliente.setEmail((String) model.getValueAt(selectedRow, 2));
-                cliente.setContato((String) model.getValueAt(selectedRow, 3));
-                cliente.setResponsavel((String) model.getValueAt(selectedRow, 4));
-
-
-                    // Atualiza os dados no banco de dados
-                    daoCPJ.altera(cliente, cliente.getRazao());
-
-                    // Atualiza a tabela com os novos dados
-                    model.setValueAt(cliente.getRazao(), selectedRow, 0);
-                
-
             }
         }
     }
