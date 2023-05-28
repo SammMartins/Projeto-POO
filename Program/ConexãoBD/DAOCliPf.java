@@ -87,4 +87,17 @@ public class DAOCliPf {
             throw new RuntimeException(e);
         }
     }
+
+
+    public void excluir(ClientePF pf) {
+        String sql = "DELETE FROM clipf WHERE cpf = ?";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, pf.getCPF());
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
