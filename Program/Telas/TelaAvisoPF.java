@@ -57,6 +57,7 @@ public class TelaAvisoPF extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
                 cancel.setEnabled(false);
                 TelaAvisoPF.this.dispose();
+                new NovoRegistroPF();
 
             }
         });
@@ -73,6 +74,7 @@ public class TelaAvisoPF extends JFrame implements ActionListener {
                 confirm.setEnabled(false);
                 dpf.insert(pf);
                 TelaAvisoPF.this.dispose();
+                new NovoRegistroPF();
             }
         });
         this.add(confirm);
