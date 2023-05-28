@@ -5,6 +5,8 @@ import Program.ConexãoBD.DAOCliPf;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -12,19 +14,30 @@ import java.util.List;
 public class TelaTablePF extends Tela implements ActionListener {
 
     JButton voltar = new JButton();
-    JButton excluir = new JButton("Excluir");
+    JButton jbExcluir = new JButton("Excluir");
+    JButton jbAlterar = new JButton("Alterar");
     JTable table;
 
-    public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
+    public ImageIcon iconSave = new ImageIcon("Images/save.png");
+    public ImageIcon iconPF = new ImageIcon("Images/PF.png");
+    public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
+    public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
 
+        //------------------------Criação de Cores-----------------------------------------------------------
+        public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
+        public Color corPanel = new Color(15, 76, 117);
+        public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
+        public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
+        public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
+        
     public TelaTablePF() {
-        // Configurações do JFrame
         setTitle("Resultado da Busca");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
-        setSize(700, 400);
+        setSize(1000, 500);
+
 
         // Configurações do Botão voltar
         voltar.setIcon(iconBack);
@@ -33,10 +46,18 @@ public class TelaTablePF extends Tela implements ActionListener {
         this.add(voltar);
 
         // Configurações do Botão excluir
-        excluir.setBounds(70, 15, 40, 30);
-        excluir.addActionListener(this);
-        excluir.setIcon(iconCancel);
-        add(excluir);
+        jbExcluir.setBounds(850, 405, 110, 30);
+        jbExcluir.setHorizontalTextPosition(SwingConstants.LEFT);
+        jbExcluir.addActionListener(this);
+        jbExcluir.setIcon(iconCancel);
+
+        add(jbExcluir);
+
+        // Configurações do Botão alterar
+        jbAlterar.setBounds(730, 405, 100, 30);
+        jbAlterar.addActionListener(this);
+        // jbAlterar.setIcon(iconAlterar);
+        add(jbAlterar);
 
         // Criação do DefaultTableModel com as colunas desejadas
         DefaultTableModel model = new DefaultTableModel();
@@ -68,7 +89,7 @@ public class TelaTablePF extends Tela implements ActionListener {
         if (e.getSource() == voltar) {
             this.dispose();
             new Manuntencao();
-        } else if (e.getSource() == excluir) {
+        } else if (e.getSource() == jbExcluir) {
             int selectedRow = table.getSelectedRow();
             if (selectedRow != -1) {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
