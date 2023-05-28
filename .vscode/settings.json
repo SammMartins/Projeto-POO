@@ -17,5 +17,20 @@
             "c:\\Users\\rafar\\Downloads\\jjjjjjjjj\\mysql-connector-j-8.0.33\\mysql-connector-j-8.0.33.jar",
             "c:\\Program Files\\Java\\javafx-sdk-20.0.1\\lib\\javafx-swt.jar"
         ]
-    }
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "db4free.net",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "ddddd",
+            "database": "bd_poo_ftc",
+            "password": "Poo@2023",
+            "username": "bcjrs_2023"
+        }
+    ]
 }
