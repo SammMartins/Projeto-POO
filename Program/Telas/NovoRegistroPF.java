@@ -76,6 +76,7 @@ public class NovoRegistroPF extends Tela implements ActionListener {
         salvar.setBounds(185, 250, 120, 40);
         salvar.setIcon(iconSave);
         salvar.setHorizontalAlignment(SwingConstants.CENTER);
+        
         this.add(salvar);
 
         voltar.setIcon(iconBack);
