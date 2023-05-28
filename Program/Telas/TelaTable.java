@@ -77,6 +77,12 @@ public class TelaTable extends Tela implements ActionListener {
             if (selectedRow != -1) {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
                 model.removeRow(selectedRow);
+
+                // Excluir o objeto no banco de dados
+                DAOCliPj daoCPJ = new DAOCliPj();
+                List<ClientePJ> clientes = daoCPJ.lista();
+                ClientePJ cliente = clientes.get(selectedRow);
+                daoCPJ.excluir(cliente);
             }
         }
     }
