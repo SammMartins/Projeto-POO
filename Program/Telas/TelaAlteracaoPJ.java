@@ -18,6 +18,8 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
     private ClientePJ cliente;
     private boolean isSaved;
     private DAOCliPj dao;
+    
+    public String antigoCnpj;
 
     // Campos de texto para os atributos do ClientePJ
     private JTextField tfRazao;
@@ -34,6 +36,7 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
         this.cliente = cliente;
         this.isSaved = false;
         this.dao = new DAOCliPj();
+        antigoCnpj = cliente.getCnpj();
 
         // Configurações do JFrame
         setTitle("Alterar Cliente PJ");
@@ -96,13 +99,15 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
         btnCancelar.addActionListener(this);
         add(btnCancelar);
     }
-
+    
     public ClientePJ getCliente() {
+        
         cliente.setRazao(tfRazao.getText());
         cliente.setCnpj(tfCnpj.getText());
         cliente.setEmail(tfEmail.getText());
         cliente.setContato(tfContato.getText());
         cliente.setResponsavel(tfResponsavel.getText());
+        
         return cliente;
     }
 
@@ -114,7 +119,7 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSalvar) {
             ClientePJ clienteAlterado = getCliente();
-            dao.altera(clienteAlterado, cliente.getCnpj());
+            dao.altera(clienteAlterado, antigoCnpj);
             isSaved = true;
             dispose();
         } else if (e.getSource() == btnCancelar) {
