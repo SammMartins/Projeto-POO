@@ -9,6 +9,13 @@
             "name": "Start",
             "request": "launch",
             "mainClass": "Program.Telas.Start",
+            "projectName": "Projeto-POO_9276d4cf"
+        },
+        {
+            "type": "java",
+            "name": "Start",
+            "request": "launch",
+            "mainClass": "Program.Telas.Start",
             "projectName": "Projeto-POO_56eefafd"
         },
         {
