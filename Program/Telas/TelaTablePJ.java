@@ -22,6 +22,7 @@ public class TelaTablePJ extends JFrame implements ActionListener {
     public ImageIcon iconPF = new ImageIcon("Images/PF.png");
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
+    public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
 
     //------------------------Criação de Cores-----------------------------------------------------------
     public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
@@ -32,6 +33,7 @@ public class TelaTablePJ extends JFrame implements ActionListener {
 
     public TelaTablePJ() {
         setTitle("Resultado da Busca");
+        setIconImage(icone.getImage());
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

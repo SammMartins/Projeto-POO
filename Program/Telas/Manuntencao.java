@@ -13,6 +13,7 @@ public class Manuntencao extends Tela implements ActionListener {
 
     public Manuntencao() {
         setTitle("Tela de Manutenção");
+        setIconImage(icone.getImage());
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 

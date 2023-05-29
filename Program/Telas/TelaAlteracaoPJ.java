@@ -14,6 +14,8 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
     public Color corPanel = new Color(15, 76, 117);
     public Color corLabel1 = new Color(187, 225, 250); // definindo a cor de fundo em um objeto
     public Color corLabel2 = new Color(200, 200, 200);
+    public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
+
 
     private ClientePJ cliente;
     private boolean isSaved;
@@ -40,6 +42,7 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
 
         // Configurações do JFrame
         setTitle("Alterar Cliente PJ");
+        setIconImage(icone.getImage());
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);

@@ -1,9 +1,12 @@
 package Program.Telas;
 import java.awt.*;
+
 import javax.swing.*;
 
 
 public class Tela extends JFrame{
+    
+    
     //------------------------Criação de Icones--------------------------------------------------------
     public ImageIcon iconInsert = new ImageIcon("Images/insert.png");
     public ImageIcon iconConfig = new ImageIcon("Images/config.png");
@@ -13,6 +16,8 @@ public class Tela extends JFrame{
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
     public ImageIcon iconLupa = new ImageIcon("Images/Lupa.png");
+    public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
+    ;
     //------------------------Criação de Cores-----------------------------------------------------------
     public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
     public Color corPanel = new Color(15, 76, 117);
@@ -20,7 +25,7 @@ public class Tela extends JFrame{
     public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
     
     public Tela(){
-        
+        setIconImage(icone.getImage());
         setTitle("");
         setVisible(true);                              //configura visibilidade da tela.
         setSize(500, 400);                 //configurando tamanho da tela.  

@@ -24,6 +24,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
 
         public NovoRegistroPJ() {
                 this.setTitle("Cadastro Pessoa Jurídica");
+                setIconImage(icone.getImage());
 
                 // ------------------------------------------------------------------\\
 

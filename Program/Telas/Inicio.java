@@ -18,6 +18,9 @@ public class Inicio extends JFrame implements ActionListener {
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
     public ImageIcon iconLupa = new ImageIcon("Images/Lupa.png");
+    public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
+
+    
     public Color corFundo1 = new Color(27, 38, 44);
     public Color corPanel = new Color(15, 76, 117);
     public Color corLabel1 = new Color(187, 225, 250);
@@ -30,6 +33,7 @@ public class Inicio extends JFrame implements ActionListener {
 
         setTitle("");
         setVisible(true); // configura visibilidade da tela.
+        setIconImage(icone.getImage());
         setSize(500, 400); // configurando tamanho da tela.
         setDefaultCloseOperation(EXIT_ON_CLOSE); // definindo operação de fechamento de tela.
         setResizable(false); // impossibilita o redimensionamento da tela.

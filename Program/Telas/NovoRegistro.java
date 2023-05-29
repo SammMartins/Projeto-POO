@@ -13,6 +13,7 @@ public class NovoRegistro extends Tela implements ActionListener{
 
     public NovoRegistro(){
         setTitle("Gerenciar Clientes");
+        setIconImage(icone.getImage());
         setLocationRelativeTo(null);
 
 

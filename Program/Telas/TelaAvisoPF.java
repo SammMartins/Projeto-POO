@@ -26,12 +26,13 @@ public class TelaAvisoPF extends JFrame implements ActionListener {
     JButton cancel = new JButton();
     JButton confirm = new JButton();
 
-
+    public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
     public ImageIcon iconCancel = new ImageIcon("Images/cancel2.png");
     public ImageIcon iconEnviar = new ImageIcon("Images/enviar-bd.png");
 
     public TelaAvisoPF(ClientePF pf) {
         setTitle("Confirmação");
+        setIconImage(icone.getImage());
         setVisible(true); 
         setSize(300, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

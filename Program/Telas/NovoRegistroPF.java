@@ -28,6 +28,7 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
     public NovoRegistroPF() {
         setTitle("Gerenciar Pessoa Física");
+        setIconImage(icone.getImage());
 
         // Label com o texto: "NOME"
         JLabel labelNome = new JLabel();

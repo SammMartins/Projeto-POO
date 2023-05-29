@@ -29,9 +29,10 @@ public class TelaTablePF extends JFrame implements ActionListener {
         public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
         public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
         public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
-        
+        public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
     public TelaTablePF() {
         setTitle("Resultado da Busca");
+        setIconImage(icone.getImage());
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

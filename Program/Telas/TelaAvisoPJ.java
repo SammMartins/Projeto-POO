@@ -29,9 +29,11 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
 
     public ImageIcon iconCancel = new ImageIcon("Images/cancel2.png");
     public ImageIcon iconEnviar = new ImageIcon("Images/enviar-bd.png");
+    public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
 
     public TelaAvisoPJ(ClientePJ pj) {
         setTitle("Confirmação");
+        setIconImage(icone.getImage());
         setVisible(true); 
         setSize(300, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
