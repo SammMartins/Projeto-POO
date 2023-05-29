@@ -152,7 +152,7 @@ public class TelaTablePJ extends JFrame implements ActionListener {
                 cliente.setContato((String) model.getValueAt(selectedRow, 3));
                 cliente.setResponsavel((String) model.getValueAt(selectedRow, 4));
 
-                String cnpj = cliente.getCnpj();
+
                 // Abre uma nova janela de edição para o cliente selecionado
                 TelaAlteracaoPJ telaAlteracao = new TelaAlteracaoPJ(cliente);
                 telaAlteracao.setVisible(true);
