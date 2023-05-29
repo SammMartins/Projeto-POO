@@ -42,27 +42,7 @@ public class Inicio extends JFrame implements ActionListener {
         setLayout(null); // "reseta" o layout da tela.
         getContentPane().setBackground(corFundo1); // Define cor de fundo da tela.
 
-        // Texto dos desenvolvedores
-        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
-        devs.setForeground(corLabel2);
-        devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
-        devs.setBounds(40, 286, 1000, 100);
-        devs.setVisible(true);
-        this.add(devs);
-
-        JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
-        devs2.setForeground(corLabel2);
-        devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
-        devs2.setBounds(120, 295, 1000, 100);
-        devs2.setVisible(true);
-        this.add(devs2);
-
-        // Painel de controle 2
-        JPanel panel2 = new JPanel();
-        panel2.setBackground(new Color(31, 42, 51));
-        panel2.setVisible(true);
-        panel2.setBounds(0, 320, 1000, 40);
-        this.add(panel2);
+       
         
         // Painel de controle 1
         JPanel panel = new JPanel();
@@ -113,6 +93,28 @@ public class Inicio extends JFrame implements ActionListener {
         manuntencaoRegistro.setBounds(70, 190, 75, 75);
         manuntencaoRegistro.addActionListener(this);
         this.add(manuntencaoRegistro);
+
+         // Texto dos desenvolvedores
+         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
+         devs.setForeground(corLabel2);
+         devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
+         devs.setBounds(40, 286, 1000, 100);
+         devs.setVisible(true);
+         this.add(devs);
+ 
+         JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
+         devs2.setForeground(corLabel2);
+         devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
+         devs2.setBounds(120, 295, 1000, 100);
+         devs2.setVisible(true);
+         this.add(devs2);
+ 
+         // Painel de controle 2
+         JPanel panel2 = new JPanel();
+         panel2.setBackground(new Color(31, 42, 51));
+         panel2.setVisible(true);
+         panel2.setBounds(0, 320, 1000, 40);
+         this.add(panel2);
 
     }
     

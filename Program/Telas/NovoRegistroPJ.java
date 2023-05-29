@@ -34,8 +34,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
         setResizable(false);
 
         // Label de desenvolvedores
-        JLabel devs = new JLabel(
-                "Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
+        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);
         devs.setFont(new Font("Arial", Font.ITALIC, 9));
         devs.setBounds(40, 286, 1000, 100);
@@ -168,10 +167,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
         });
         this.add(voltar);
     }
-
-    @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }
