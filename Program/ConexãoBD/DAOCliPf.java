@@ -71,22 +71,7 @@ public class DAOCliPf {
             throw new RuntimeException(e);
         }
     }
-    public void altera(ClientePF c, String s){
-        String sql = "update clipf set" + "nome=?, cpf=?, contato=?" + "where nome=?";
-    
-        try {
-            PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1,c.getNome());
-            stmt.setString(2,c.getCPF());
-            stmt.setString(3,c.getContato());
-    
-            stmt.execute();
-            stmt.close();
-    
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 
     public void excluir(ClientePF pf) {
         String sql = "DELETE FROM clipf WHERE cpf = ?";
@@ -99,4 +84,25 @@ public class DAOCliPf {
             throw new RuntimeException(e);
         }
     }
-}
+
+    public void altera(ClientePF c, String n) {
+        String sql = "update clipf set" + 
+                     " nome=?, cpf=?, contato=?" + 
+                     " where cpf=?"; 
+                     try {
+                        PreparedStatement stmt = conexao.prepareStatement(sql);
+                        stmt.setString(1, c.getNome());
+                        stmt.setString(2, c.getCPF());
+                        stmt.setString(3, c.getContato());
+                        stmt.setString(4, n);
+            
+                        stmt.execute();
+                        stmt.close();
+            
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            
+    }
+

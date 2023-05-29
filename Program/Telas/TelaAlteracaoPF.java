@@ -1,8 +1,9 @@
 package Program.Telas;
-import javax.swing.*;
 
 import Program.Classes.ClientePF;
 import Program.ConexãoBD.DAOCliPf;
+
+import javax.swing.*;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -18,12 +19,14 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
     private boolean isSaved;
     private DAOCliPf dao;
     
-    public String antigoCPF;
+    public String antigoCpf;
 
-    // Campos de texto para os atributos do ClientePJ
+    // Campos de texto para os atributos do ClientePF
     private JTextField tfNome;
-    private JTextField tfCPF;
+    private JTextField tfCpf;
     private JTextField tfContato;
+
+  
 
     // Botões
     private JButton btnSalvar;
@@ -33,7 +36,7 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
         this.cliente = cliente;
         this.isSaved = false;
         this.dao = new DAOCliPf();
-        antigoCPF = cliente.getCPF();
+        antigoCpf = cliente.getCPF();
 
         // Configurações do JFrame
         setTitle("Alterar Cliente PF");
@@ -48,26 +51,30 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
         lblNome.setBounds(20, 20, 100, 20);
         add(lblNome);
 
-        JLabel lblCPF = new JLabel("CPF:");
-        lblCPF.setBounds(20, 50, 100, 20);
-        add(lblCPF);
+        JLabel lblCpf = new JLabel("CPF:");
+        lblCpf.setBounds(20, 50, 100, 20);
+        add(lblCpf);
+
 
         JLabel lblContato = new JLabel("Contato:");
         lblContato.setBounds(20, 80, 100, 20);
         add(lblContato);
 
+        
         // Campos de texto
         tfNome = new JTextField(cliente.getNome());
         tfNome.setBounds(130, 20, 200, 20);
         add(tfNome);
 
-        tfCPF = new JTextField(cliente.getCPF());
-        tfCPF.setBounds(130, 50, 200, 20);
-        add(tfCPF);
+        tfCpf = new JTextField(cliente.getCPF());
+        tfCpf.setBounds(130, 50, 200, 20);
+        add(tfCpf);
+
 
         tfContato = new JTextField(cliente.getContato());
         tfContato.setBounds(130, 80, 200, 20);
         add(tfContato);
+
 
         // Botões
         btnSalvar = new JButton("Salvar");
@@ -84,9 +91,9 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
     public ClientePF getCliente() {
         
         cliente.setNome(tfNome.getText());
-        cliente.setCPF(tfCPF.getText());
+        cliente.setCPF(tfCpf.getText());
         cliente.setContato(tfContato.getText());
- 
+        
         
         return cliente;
     }
@@ -99,7 +106,7 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSalvar) {
             ClientePF clienteAlterado = getCliente();
-            dao.altera(clienteAlterado, antigoCPF);
+            dao.altera(clienteAlterado, antigoCpf);
             isSaved = true;
             dispose();
         } else if (e.getSource() == btnCancelar) {
