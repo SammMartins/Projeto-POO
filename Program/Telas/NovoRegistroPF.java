@@ -1,27 +1,35 @@
 package Program.Telas;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.*;
+
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import Program.Classes.ClientePF;
 
 public class NovoRegistroPF extends Tela implements ActionListener {
 
-    // ---------BUTTON---------//
-    JButton salvar = new JButton();
-    JButton voltar = new JButton();
+    //------------------------CEATE BUTTON------------------------\\
 
-    // ---------TEXTFIELD---------//
+    JButton salvar = new JButton("Salvar",iconSave);
+    JButton voltar = new JButton(iconBack);
+
+    //------------------------CEATE TEXTFIELD------------------------\\
+
     JTextField textName = new JTextField();
     JTextField textCPF = new JTextField();
     JTextField textContato = new JTextField();
+
+    //------------------------CEATE LABEL------------------------\\
+
+    JLabel labelNome = new JLabel("Nome");
+    JLabel labelCPF = new JLabel("CPF");
+    JLabel labelContato = new JLabel("Contato");
 
     private String sNome, sCPF, sContato;
 
@@ -29,52 +37,41 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
     public NovoRegistroPF() {
         setTitle("Gerenciar Pessoa Física");
-        setResizable(false);
-        setIconImage(icone.getImage());
-        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
-        devs.setForeground(corLabel2);
-        devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
-        devs.setBounds(40, 286, 1000, 100);
-        devs.setVisible(true);
-        this.add(devs);
 
-        JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
-        devs2.setForeground(corLabel2);
-        devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
-        devs2.setBounds(120, 295, 1000, 100);
-        devs2.setVisible(true);
-        this.add(devs2);
+    //------------------------Labels------------------------\\
 
-        JPanel panel2 = new JPanel();
-        panel2.setBackground(new Color(31, 42, 51));
-        panel2.setVisible(true);
-        panel2.setBounds(0, 320, 1000, 40);
-        this.add(panel2);
-        // Label com o texto: "NOME"
-        JLabel labelNome = new JLabel();
-        labelNome.setText("Nome:");
+        // NOME
+
         labelNome.setBounds(30, 66, 70, 70);
         labelNome.setForeground(corLabel1);
         labelNome.setVisible(true);
         this.add(labelNome);
 
-        // Caixa para inserir o NOME
+        // CPF
 
-        textName.setBounds(170, 90, 300, 25);
-        textName.setFont(new Font("Arial", Font.ITALIC, 12));
-        textName.setToolTipText("Insira o nome aqui");
-        textName.setVisible(true);
-        this.add(textName);
-
-        // Label com o texto: "CPF"
-        JLabel labelCPF = new JLabel();
-        labelCPF.setText("CPF:");
         labelCPF.setBounds(30, 100, 70, 70);
         labelCPF.setForeground(corLabel1);
         labelCPF.setVisible(true);
         this.add(labelCPF);
 
-        // Caixa para inserir o "CPF"
+        // CONTATO
+
+        labelContato.setBounds(30, 134, 70, 70);
+        labelContato.setForeground(corLabel1);
+        labelContato.setVisible(true);
+        this.add(labelContato);
+
+    //------------------------TextFields------------------------\\
+
+        //NAME
+
+        textName.setBounds(170, 90, 300, 25);
+        textName.setFont(new Font("Arial", Font.ITALIC, 12));
+        textName.setToolTipText("Insira o Nome aqui");
+        textName.setVisible(true);
+        this.add(textName);
+
+        // CPF
 
         textCPF.setBounds(170, 124, 300, 25);
         textCPF.setFont(new Font("Arial", Font.ITALIC, 12));
@@ -82,36 +79,26 @@ public class NovoRegistroPF extends Tela implements ActionListener {
         textCPF.setVisible(true);
         add(textCPF);
 
-        // Label com o texto: "CELULAR"
-        JLabel labelContato = new JLabel();
-        labelContato.setText("Contato:");
-        labelContato.setBounds(30, 134, 70, 70);
-        labelContato.setForeground(corLabel1);
-        labelContato.setVisible(true);
-        this.add(labelContato);
-
-        // Caixa para inserir o celular
+        // CONTATO
 
         textContato.setBounds(170, 158, 300, 25);
         textContato.setFont(new Font("Arial", Font.ITALIC, 12));
-        textContato.setToolTipText("Insira o celular aqui");
+        textContato.setToolTipText("Insira o Contato aqui");
         textContato.setVisible(true);
         this.add(textContato);
 
-        // --------------------------------------------------
 
-        // Criação do botão de cadastro
+    //------------------------FUNÇÃO BUTTONS------------------------\\
+
 
         salvar.setVisible(true);
-        salvar.setText("Salvar");
         salvar.setBounds(185, 250, 120, 40);
-        salvar.setIcon(iconSave);
         salvar.setHorizontalAlignment(SwingConstants.CENTER);
         salvar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                salvar.setEnabled(false); // Desabilita o botão
+                salvar.setEnabled(false); 
 
                 sNome = textName.getText();
                 clientePF.setNome(sNome);
@@ -124,7 +111,6 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
                 new TelaAvisoPF(clientePF);
                 NovoRegistroPF.this.dispose();
-                
 
             }
 
@@ -132,23 +118,19 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
         this.add(salvar);
 
-        voltar.setIcon(iconBack);
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
-        voltar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                NovoRegistroPF.this.dispose();
-                new NovoRegistro();
-            }
-        });
+        voltar.addActionListener(this);
         this.add(voltar);
 
     }
 
     // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource() == voltar){
+            this.dispose();
+            new NovoRegistro();
     }
 
+}
 }
