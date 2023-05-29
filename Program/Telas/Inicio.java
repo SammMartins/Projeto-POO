@@ -10,6 +10,7 @@ import javax.swing.*;
 
 public class Inicio extends JFrame implements ActionListener {
 
+    // Icons para os botões
     public ImageIcon iconInsert = new ImageIcon("Images/insert.png");
     public ImageIcon iconConfig = new ImageIcon("Images/config.png");
     public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
@@ -20,7 +21,7 @@ public class Inicio extends JFrame implements ActionListener {
     public ImageIcon iconLupa = new ImageIcon("Images/Lupa.png");
     public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
 
-
+    // Cores utilizadas
     public Color corFundo1 = new Color(27, 38, 44);
     public Color corPanel = new Color(15, 76, 117);
     public Color corLabel1 = new Color(187, 225, 250);
@@ -41,8 +42,7 @@ public class Inicio extends JFrame implements ActionListener {
         setLayout(null); // "reseta" o layout da tela.
         getContentPane().setBackground(corFundo1); // Define cor de fundo da tela.
 
-       
-
+        // Texto dos desenvolvedores
         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);
         devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
@@ -57,19 +57,21 @@ public class Inicio extends JFrame implements ActionListener {
         devs2.setVisible(true);
         this.add(devs2);
 
+        // Painel de controle 2
         JPanel panel2 = new JPanel();
         panel2.setBackground(new Color(31, 42, 51));
         panel2.setVisible(true);
         panel2.setBounds(0, 320, 1000, 40);
         this.add(panel2);
         
+        // Painel de controle 1
         JPanel panel = new JPanel();
         panel.setBackground(corPanel);
         panel.setVisible(true);
         panel.setBounds(0, 0, 1000, 60);
         this.add(panel);
 
-
+        // Título e subtitulo do Novo Registro
         setTitle("Gerenciar Clientes");
         JLabel labelRegistro = new JLabel();
         labelRegistro.setText("Novo Registro");
@@ -84,7 +86,8 @@ public class Inicio extends JFrame implements ActionListener {
         sublabelRegistro.setBounds(180, 60, 300, 100);
         sublabelRegistro.setFont(new Font("Arial", Font.PLAIN, 11));
         this.add(sublabelRegistro);
-        // -------------------------------------------------------------------------------------------
+
+        // Título e subtitulo da Manutenção de Registro
         JLabel labelManu = new JLabel();
         labelManu.setText("Matutenção de Registro");
         labelManu.setForeground(corLabel1);
@@ -99,21 +102,21 @@ public class Inicio extends JFrame implements ActionListener {
         sublabelManu.setFont(new Font("Arial", Font.PLAIN, 11));
         this.add(sublabelManu);
 
-        // -------------------------------------------------------------------------------
-
+        // Botão Novo Registro
         novoRegistro.setBounds(70, 70, 75, 75);
         novoRegistro.setIcon(iconInsert);
         novoRegistro.addActionListener(this);
         this.add(novoRegistro);
 
+        // Botão Manutenção de Registro
         manuntencaoRegistro.setIcon(iconConfig);
         manuntencaoRegistro.setBounds(70, 190, 75, 75);
         manuntencaoRegistro.addActionListener(this);
         this.add(manuntencaoRegistro);
 
     }
-    // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
-
+    
+    // Método de ação dos botões
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == novoRegistro) {
             this.dispose();
