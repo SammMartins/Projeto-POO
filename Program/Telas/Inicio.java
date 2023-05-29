@@ -42,8 +42,6 @@ public class Inicio extends JFrame implements ActionListener {
         setLayout(null); // "reseta" o layout da tela.
         getContentPane().setBackground(corFundo1); // Define cor de fundo da tela.
 
-       
-        
         // Painel de controle 1
         JPanel panel = new JPanel();
         panel.setBackground(corPanel);
@@ -124,7 +122,6 @@ public class Inicio extends JFrame implements ActionListener {
             this.dispose();
             new NovoRegistro();
         }
-
         if (e.getSource() == manuntencaoRegistro) {
             this.dispose();
             new Manuntencao();

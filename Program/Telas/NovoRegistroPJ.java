@@ -126,6 +126,18 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
         jtfResponsavelLegal.addActionListener(this);
         this.add(jtfResponsavelLegal);
 
+        // Botão "Voltar"
+        voltar.setIcon(iconBack);
+        voltar.setBounds(10, 15, 40, 30);
+        voltar.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                        NovoRegistroPJ.this.dispose();
+                        new NovoRegistro();
+                    }
+                });
+
+        this.add(voltar);
+
         // Botão "Salvar"
         salvar.setVisible(true);
         salvar.setBounds(175, 270, 120, 40);
@@ -155,17 +167,6 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
             }
         });
         this.add(salvar);
-
-        // Botão "Voltar"
-        voltar.setIcon(iconBack);
-        voltar.setBounds(10, 15, 40, 30);
-        voltar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                NovoRegistroPJ.this.dispose();
-                new NovoRegistro();
-            }
-        });
-        this.add(voltar);
     }
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");

@@ -1,7 +1,6 @@
 package Program.Telas;
 
 import javax.swing.*;
-//import javax.swing.plaf.RootPaneUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -92,6 +91,5 @@ public class NovoRegistro extends Tela implements ActionListener {
             this.dispose();
             new Inicio();
         }
-
     }
 }

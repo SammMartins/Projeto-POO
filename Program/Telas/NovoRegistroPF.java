@@ -3,13 +3,10 @@ package Program.Telas;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
-
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-
 import Program.Classes.ClientePF;
 
 public class NovoRegistroPF extends Tela implements ActionListener {
@@ -37,7 +34,6 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
     public NovoRegistroPF() {
         setTitle("Gerenciar Pessoa Física");
-
         //------------------------Labels------------------------\\
 
         // NOME
@@ -105,17 +101,13 @@ public class NovoRegistroPF extends Tela implements ActionListener {
                 NovoRegistroPF.this.dispose();
 
             }
-
         });
 
         this.add(salvar);
-
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
-
     }
-
     // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == voltar) {
