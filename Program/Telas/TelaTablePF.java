@@ -123,7 +123,7 @@ public class TelaTablePF extends JFrame implements ActionListener {
                         cliente.setCPF((String) model.getValueAt(selectedRow, 1));
                         cliente.setContato((String) model.getValueAt(selectedRow, 2));
 
-                        String cpf = cliente.getCPF();
+                        //String cpf = cliente.getCPF();
                         // Abre uma nova janela de edição para o cliente selecionado
                         TelaAlteracaoPF telaAlteracao = new TelaAlteracaoPF(cliente);
                         telaAlteracao.setVisible(true);

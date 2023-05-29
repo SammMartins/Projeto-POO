@@ -53,7 +53,7 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
         add(lblCPF);
 
         JLabel lblContato = new JLabel("Contato:");
-        lblContato.setBounds(20, 110, 100, 20);
+        lblContato.setBounds(20, 80, 100, 20);
         add(lblContato);
 
         // Campos de texto
@@ -66,7 +66,7 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
         add(tfCPF);
 
         tfContato = new JTextField(cliente.getContato());
-        tfContato.setBounds(130, 110, 200, 20);
+        tfContato.setBounds(130, 80, 200, 20);
         add(tfContato);
 
         // Botões
