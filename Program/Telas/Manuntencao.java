@@ -18,6 +18,7 @@ public class Manuntencao extends Tela implements ActionListener {
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        // Texto dos desenvolvedores
         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);
         devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
@@ -32,12 +33,14 @@ public class Manuntencao extends Tela implements ActionListener {
         devs2.setVisible(true);
         this.add(devs2);
 
+        // Painel de controle 2
         JPanel panel2 = new JPanel();
         panel2.setBackground(new Color(31, 42, 51));
         panel2.setVisible(true);
         panel2.setBounds(0, 320, 1000, 40);
         this.add(panel2);
 
+        // Título e subtitulo do Pesquisar PF
         JLabel labelMTPF = new JLabel();
         labelMTPF.setText("Pesquisar PF");
         labelMTPF.setForeground(corLabel1);
@@ -45,6 +48,7 @@ public class Manuntencao extends Tela implements ActionListener {
         labelMTPF.setFont(new Font("Arial Black", Font.PLAIN, 12));
         this.add(labelMTPF);
 
+        // Título e subtitulo do Pesquisar PJ
         JLabel labelMTPJ = new JLabel();
         labelMTPJ.setText("Pesquisar PJ");
         labelMTPJ.setForeground(corLabel1);
@@ -52,27 +56,30 @@ public class Manuntencao extends Tela implements ActionListener {
         labelMTPJ.setFont(new Font("Arial Black", Font.PLAIN, 12));
         this.add(labelMTPJ);
 
+        // Botão Pesquisar PF
         MTPF.setBounds(70, 70, 75, 75);
         MTPF.setIcon(iconPF);
         MTPF.addActionListener(this);
         this.add(MTPF);
 
+        // Botão Pesquisar PJ
         MTPJ.setBounds(70, 190, 75, 75);
         MTPJ.setIcon(iconPJ);
         MTPJ.addActionListener(this);
         this.add(MTPJ);
 
+        // Botão Voltar
         voltar.setIcon(iconBack);
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
         this.add(voltar);
     }
-    //----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
+
+    // Método de ação dos botões
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == MTPF) {
             this.dispose();
-        new TelaTablePF();
-
+            new TelaTablePF();
         }
         if (e.getSource() == MTPJ) {
             this.dispose();
@@ -80,7 +87,7 @@ public class Manuntencao extends Tela implements ActionListener {
         }
         if (e.getSource() == voltar) {
             this.dispose();
-         new Inicio();    
+            new Inicio();    
         }
     }
 }
