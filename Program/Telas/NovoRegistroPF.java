@@ -14,18 +14,18 @@ import Program.Classes.ClientePF;
 
 public class NovoRegistroPF extends Tela implements ActionListener {
 
-    //------------------------CEATE BUTTON------------------------\\
+    //------------------------CREATE BUTTON------------------------\\
 
     JButton salvar = new JButton("Salvar",iconSave);
     JButton voltar = new JButton(iconBack);
 
-    //------------------------CEATE TEXTFIELD------------------------\\
+    //------------------------CREATE TEXTFIELD------------------------\\
 
     JTextField textName = new JTextField();
     JTextField textCPF = new JTextField();
     JTextField textContato = new JTextField();
 
-    //------------------------CEATE LABEL------------------------\\
+    //------------------------CREATE LABEL------------------------\\
 
     JLabel labelNome = new JLabel("Nome");
     JLabel labelCPF = new JLabel("CPF");
