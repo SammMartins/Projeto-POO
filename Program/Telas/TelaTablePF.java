@@ -124,7 +124,45 @@ public class TelaTablePF extends JFrame implements ActionListener {
             if (selectedRow != -1) {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
                 model.removeRow(selectedRow);
+
+                // Excluir o objeto no banco de dados
+                DAOCliPf daoCPF = new DAOCliPf();
+                List<ClientePF> clientes = daoCPF.lista();
+                ClientePF cliente = clientes.get(selectedRow);
+                daoCPF.excluir(cliente);
+            }
+        } else if (e.getSource() == jbAlterar) {
+            int selectedRow = table.getSelectedRow();
+            if (selectedRow != -1) {
+                DAOCliPf daoCPF = new DAOCliPf();
+                DefaultTableModel model = (DefaultTableModel) table.getModel();
+                ClientePF cliente = new ClientePF();
+                cliente.setNome((String) model.getValueAt(selectedRow, 0));
+                cliente.setCPF((String) model.getValueAt(selectedRow, 1));
+                cliente.setContato((String) model.getValueAt(selectedRow, 2));
+
+                String cpf = cliente.getCPF();
+                // Abre uma nova janela de edição para o cliente selecionado
+                TelaAlteracaoPF telaAlteracao = new TelaAlteracaoPF(cliente);
+                telaAlteracao.setVisible(true);
+                telaAlteracao.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                        // Verifica se a janela de edição foi fechada com as alterações salvas
+                        if (telaAlteracao.isSaved()) {
+                            ClientePF clienteAlterado = telaAlteracao.getCliente();
+                            // Atualiza os dados no banco de dados
+                            daoCPF.altera(clienteAlterado, cliente.getCPF());
+
+                            // Atualiza a tabela com os novos dados
+                            model.setValueAt(clienteAlterado.getNome(), selectedRow, 0);
+                            model.setValueAt(clienteAlterado.getCPF(), selectedRow, 1);
+                            model.setValueAt(clienteAlterado.getContato(), selectedRow, 2);
+                        }
+                    }
+                });
             }
         }
     }
 }
+    
