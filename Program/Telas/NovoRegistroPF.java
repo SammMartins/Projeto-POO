@@ -16,7 +16,7 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
     //------------------------CREATE BUTTON------------------------\\
 
-    JButton salvar = new JButton("Salvar",iconSave);
+    JButton salvar = new JButton("Salvar", iconSave);
     JButton voltar = new JButton(iconBack);
 
     //------------------------CREATE TEXTFIELD------------------------\\
@@ -38,33 +38,29 @@ public class NovoRegistroPF extends Tela implements ActionListener {
     public NovoRegistroPF() {
         setTitle("Gerenciar Pessoa Física");
 
-    //------------------------Labels------------------------\\
+        //------------------------Labels------------------------\\
 
         // NOME
-
         labelNome.setBounds(30, 66, 70, 70);
         labelNome.setForeground(corLabel1);
         labelNome.setVisible(true);
         this.add(labelNome);
 
         // CPF
-
         labelCPF.setBounds(30, 100, 70, 70);
         labelCPF.setForeground(corLabel1);
         labelCPF.setVisible(true);
         this.add(labelCPF);
 
         // CONTATO
-
         labelContato.setBounds(30, 134, 70, 70);
         labelContato.setForeground(corLabel1);
         labelContato.setVisible(true);
         this.add(labelContato);
 
-    //------------------------TextFields------------------------\\
+        //------------------------TextFields------------------------\\
 
         //NAME
-
         textName.setBounds(170, 90, 300, 25);
         textName.setFont(new Font("Arial", Font.ITALIC, 12));
         textName.setToolTipText("Insira o Nome aqui");
@@ -72,7 +68,6 @@ public class NovoRegistroPF extends Tela implements ActionListener {
         this.add(textName);
 
         // CPF
-
         textCPF.setBounds(170, 124, 300, 25);
         textCPF.setFont(new Font("Arial", Font.ITALIC, 12));
         textCPF.setToolTipText("Insira o CPF aqui");
@@ -80,16 +75,13 @@ public class NovoRegistroPF extends Tela implements ActionListener {
         add(textCPF);
 
         // CONTATO
-
         textContato.setBounds(170, 158, 300, 25);
         textContato.setFont(new Font("Arial", Font.ITALIC, 12));
         textContato.setToolTipText("Insira o Contato aqui");
         textContato.setVisible(true);
         this.add(textContato);
 
-
-    //------------------------FUNÇÃO BUTTONS------------------------\\
-
+        //------------------------FUNÇÃO BUTTONS------------------------\\
 
         salvar.setVisible(true);
         salvar.setBounds(185, 250, 120, 40);
@@ -98,7 +90,7 @@ public class NovoRegistroPF extends Tela implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                salvar.setEnabled(false); 
+                salvar.setEnabled(false);
 
                 sNome = textName.getText();
                 clientePF.setNome(sNome);
@@ -120,17 +112,15 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
         voltar.setBounds(10, 15, 40, 30);
         voltar.addActionListener(this);
-        voltar.addActionListener(this);
         this.add(voltar);
 
     }
 
     // ----------MÉTODO DE CRIAÇÃO DE EVENTOS----------
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == voltar){
+        if (e.getSource() == voltar) {
             this.dispose();
             new NovoRegistro();
+        }
     }
-
-}
 }
