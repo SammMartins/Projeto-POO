@@ -23,13 +23,14 @@ public class TelaTablePF extends JFrame implements ActionListener {
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
 
-        //------------------------Criação de Cores-----------------------------------------------------------
-        public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
-        public Color corPanel = new Color(15, 76, 117);
-        public Color corLabel1 = new Color(187, 225, 250);     //definindo a cor de fundo em um objeto
-        public Color corLabel2 = new Color(200,200,200);    //definindo a cor de fundo em um objeto
-        public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
-        
+    // ------------------------Criação de
+    // Cores-----------------------------------------------------------
+    public Color corFundo1 = new Color(27, 38, 44); // definindo a cor de fundo em um objeto
+    public Color corPanel = new Color(15, 76, 117);
+    public Color corLabel1 = new Color(187, 225, 250); // definindo a cor de fundo em um objeto
+    public Color corLabel2 = new Color(200, 200, 200); // definindo a cor de fundo em um objeto
+    public ImageIcon iconCancel = new ImageIcon("Images/cancel.png");
+
     public TelaTablePF() {
         setTitle("Resultado da Busca");
         setResizable(false);
@@ -45,8 +46,6 @@ public class TelaTablePF extends JFrame implements ActionListener {
         panel.setVisible(true);
         panel.setBounds(0, 0, 60, 1000);
         this.add(panel);
-        
-
 
         // Configurações do Botão voltar
         voltar.setIcon(iconBack);
@@ -106,7 +105,47 @@ public class TelaTablePF extends JFrame implements ActionListener {
             if (selectedRow != -1) {
                 DefaultTableModel model = (DefaultTableModel) table.getModel();
                 model.removeRow(selectedRow);
+
+                // Excluir o objeto no banco de dados
+                DAOCliPf daoCPF = new DAOCliPf();
+                List<ClientePF> clientes = daoCPF.lista();
+                ClientePF cliente = clientes.get(selectedRow);
+                daoCPF.excluir(cliente);
             }
         }
-    }
-}
+                if (e.getSource() == jbAlterar) {
+                    int selectedRow = table.getSelectedRow();
+                    if (selectedRow != -1) {
+                        DAOCliPf daoCPF = new DAOCliPf();
+                        DefaultTableModel model = (DefaultTableModel) table.getModel();
+                        ClientePF cliente = new ClientePF();
+                        cliente.setNome((String) model.getValueAt(selectedRow, 0));
+                        cliente.setCPF((String) model.getValueAt(selectedRow, 1));
+                        cliente.setContato((String) model.getValueAt(selectedRow, 2));
+
+                        String cpf = cliente.getCPF();
+                        // Abre uma nova janela de edição para o cliente selecionado
+                        TelaAlteracaoPF telaAlteracao = new TelaAlteracaoPF(cliente);
+                        telaAlteracao.setVisible(true);
+                        telaAlteracao.addWindowListener(new java.awt.event.WindowAdapter() {
+                            @Override
+                            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                                // Verifica se a janela de edição foi fechada com as alterações salvas
+                                if (telaAlteracao.isSaved()) {
+                                    ClientePF clienteAlterado = telaAlteracao.getCliente();
+                                    // Atualiza os dados no banco de dados
+                                    daoCPF.altera(clienteAlterado, cliente.getNome());
+
+                                    // Atualiza a tabela com os novos dados
+                                    model.setValueAt(clienteAlterado.getNome(), selectedRow, 0);
+                                    model.setValueAt(clienteAlterado.getCPF(), selectedRow, 1);
+                                    model.setValueAt(clienteAlterado.getContato(), selectedRow, 2);
+                                  
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    

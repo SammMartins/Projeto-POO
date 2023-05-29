@@ -89,7 +89,7 @@ public class DAOCliPf {
     }
 
     public void excluir(ClientePF pf) {
-        String sql = "DELETE FROM clipj WHERE cnpj = ?";
+        String sql = "DELETE FROM clipf WHERE cpf = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, pf.getCPF());
