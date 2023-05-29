@@ -14,35 +14,38 @@ import Program.Classes.ClientePJ;
 import Program.ConexãoBD.DAOCliPj;
 
 public class TelaAvisoPJ extends JFrame implements ActionListener {
-    // Intancia de um objeto DAO do Cliente PJ
-    static DAOCliPj dpj = new DAOCliPj();
+    static DAOCliPj dpj = new DAOCliPj(); // Instância do objeto DAOCliPj
 
-    public Color corFundo1 = new Color(27, 38, 44); // definindo a cor de fundo
+    // Cores utilizadas
+    public Color corFundo1 = new Color(27, 38, 44);
     public Color corFundo2 = new Color(37, 48, 54);
-    public Color corLabel1 = new Color(187, 225, 250); // definindo a cor da label
+    public Color corLabel1 = new Color(187, 225, 250);
     public Color corLabel2 = new Color(200, 200, 200);
     public Color branco = new Color(255,255,255);
 
+    // Botões
     JButton cancel = new JButton();
     JButton confirm = new JButton();
 
-
+    // Ícones e cores
     public ImageIcon iconCancel = new ImageIcon("Images/cancel2.png");
     public ImageIcon iconEnviar = new ImageIcon("Images/enviar-bd.png");
     public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
 
     public TelaAvisoPJ(ClientePJ pj) {
+        // Configurações do JFrame
         setTitle("Confirmação");
         setIconImage(icone.getImage());
         setResizable(false);
-        setVisible(true); 
+        setVisible(true);
         setSize(300, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false); 
-        setLocationRelativeTo(null); 
+        setResizable(false);
+        setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
 
+        // Label de desenvolvedores
         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);
         devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
@@ -50,6 +53,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
         devs.setVisible(true);
         this.add(devs);
 
+        // Label de desenvolvedores (continuação)
         JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
         devs2.setForeground(corLabel2);
         devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
@@ -63,6 +67,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
         panel2.setBounds(0, 320, 1000, 40);
         this.add(panel2);
 
+        // Label de aviso
         JLabel labelAviso = new JLabel();
         labelAviso.setText("Salvar novo registro?");
         labelAviso.setForeground(branco);
@@ -70,13 +75,13 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
         labelAviso.setFont(new Font("Arial", Font.PLAIN, 15));
         this.add(labelAviso);
 
+        // Botão cancelar
         cancel.setBounds(80, 80, 35, 35);
         cancel.setHorizontalAlignment(SwingConstants.CENTER);
         cancel.setBackground(branco);
         cancel.setIcon(iconCancel);
         cancel.addActionListener(this);
-        cancel.addActionListener(new ActionListener() { // MÉTODO DE CRIAÇÃO DE EVENTO DO BOTÃO SALVAR
-            
+        cancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cancel.setEnabled(false);
                 TelaAvisoPJ.this.dispose();
@@ -85,13 +90,13 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
         });
         this.add(cancel);
 
+        // Botão confirmar
         confirm.setBounds(150, 80, 35, 35);
         confirm.setHorizontalAlignment(SwingConstants.CENTER);
         confirm.setBackground(new Color(6,185,57));
         confirm.setIcon(iconEnviar);
         confirm.addActionListener(this);
         confirm.addActionListener(new ActionListener() {
-            
             public void actionPerformed(ActionEvent e) {
                 confirm.setEnabled(false);
                 dpj.insert(pj);
@@ -100,11 +105,10 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
             }
         });
         this.add(confirm);
-        //teste
 
     }
+
     public void actionPerformed(ActionEvent e) {
 
     }
-
 }
