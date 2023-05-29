@@ -42,6 +42,26 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(corFundo1);
 
+        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
+        devs.setForeground(corLabel2);
+        devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs.setBounds(40, 286, 1000, 100);
+        devs.setVisible(true);
+        this.add(devs);
+
+        JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
+        devs2.setForeground(corLabel2);
+        devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs2.setBounds(120, 295, 1000, 100);
+        devs2.setVisible(true);
+        this.add(devs2);
+
+        JPanel panel2 = new JPanel();
+        panel2.setBackground(new Color(31, 42, 51));
+        panel2.setVisible(true);
+        panel2.setBounds(0, 320, 1000, 40);
+        this.add(panel2);
+
         JLabel labelAviso = new JLabel();
         labelAviso.setText("Salvar novo registro?");
         labelAviso.setForeground(branco);

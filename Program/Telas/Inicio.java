@@ -20,7 +20,7 @@ public class Inicio extends JFrame implements ActionListener {
     public ImageIcon iconLupa = new ImageIcon("Images/Lupa.png");
     public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
 
-    
+
     public Color corFundo1 = new Color(27, 38, 44);
     public Color corPanel = new Color(15, 76, 117);
     public Color corLabel1 = new Color(187, 225, 250);
@@ -28,9 +28,9 @@ public class Inicio extends JFrame implements ActionListener {
 
     JButton novoRegistro = new JButton();
     JButton manuntencaoRegistro = new JButton();
-
+    
     public Inicio() {
-
+        
         setTitle("");
         setVisible(true); // configura visibilidade da tela.
         setIconImage(icone.getImage());
@@ -41,11 +41,34 @@ public class Inicio extends JFrame implements ActionListener {
         setLayout(null); // "reseta" o layout da tela.
         getContentPane().setBackground(corFundo1); // Define cor de fundo da tela.
 
+       
+
+        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
+        devs.setForeground(corLabel2);
+        devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs.setBounds(40, 286, 1000, 100);
+        devs.setVisible(true);
+        this.add(devs);
+
+        JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
+        devs2.setForeground(corLabel2);
+        devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs2.setBounds(120, 295, 1000, 100);
+        devs2.setVisible(true);
+        this.add(devs2);
+
+        JPanel panel2 = new JPanel();
+        panel2.setBackground(new Color(31, 42, 51));
+        panel2.setVisible(true);
+        panel2.setBounds(0, 320, 1000, 40);
+        this.add(panel2);
+        
         JPanel panel = new JPanel();
         panel.setBackground(corPanel);
         panel.setVisible(true);
         panel.setBounds(0, 0, 1000, 60);
         this.add(panel);
+
 
         setTitle("Gerenciar Clientes");
         JLabel labelRegistro = new JLabel();

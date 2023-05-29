@@ -7,6 +7,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -23,6 +24,7 @@ public class TelaTablePJ extends JFrame implements ActionListener {
     public ImageIcon iconPJ = new ImageIcon("Images/PJ.png");
     public ImageIcon iconBack = new ImageIcon("Images/voltar.png");
     public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
+    public ImageIcon iconAlterar = new ImageIcon("Images/alterar.png");
 
     //------------------------Criação de Cores-----------------------------------------------------------
     public Color corFundo1 = new Color(27, 38, 44);         //definindo a cor de fundo em um objeto
@@ -41,7 +43,20 @@ public class TelaTablePJ extends JFrame implements ActionListener {
         getContentPane().setBackground(corFundo1);
         setSize(1000, 500);
         setLocationRelativeTo(null);
-        
+
+        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
+        devs.setForeground(corLabel2);
+        devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs.setBounds(70, 385, 1000, 100);
+        devs.setVisible(true);
+        this.add(devs);
+
+        JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
+        devs2.setForeground(corLabel2);
+        devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs2.setBounds(150, 395, 1000, 100);
+        devs2.setVisible(true);
+        this.add(devs2);
 
         JPanel panel = new JPanel();
         panel.setBackground(corPanel);
@@ -65,7 +80,9 @@ public class TelaTablePJ extends JFrame implements ActionListener {
         this.add(jbExcluir);
 
         // Configurações do Botão alterar
-        jbAlterar.setBounds(730, 405, 100, 30);
+        jbAlterar.setBounds(730, 405, 110, 30);
+        jbAlterar.setIcon(iconAlterar);
+        jbAlterar.setAlignmentX(LEFT_ALIGNMENT);
         jbAlterar.addActionListener(this);
         // jbAlterar.setIcon(iconAlterar);
         add(jbAlterar);
