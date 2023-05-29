@@ -1,14 +1,19 @@
 package Program.Telas;
 
-import Program.Classes.ClientePJ;
-import Program.ConexãoBD.DAOCliPj;
-
-import javax.swing.*;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import Program.Classes.ClientePJ;
+import Program.ConexãoBD.DAOCliPj;
 
 public class TelaAlteracaoPJ extends JFrame implements ActionListener {
     // Cores utilizadas
@@ -57,7 +62,8 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
         setSize(400, 300);
 
         // Label de desenvolvedores
-        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
+        JLabel devs = new JLabel(
+                "Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);
         devs.setFont(new Font("Arial", Font.ITALIC, 9));
         devs.setBounds(40, 286, 1000, 100);
