@@ -11,20 +11,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TelaAlteracaoPJ extends JFrame implements ActionListener {
-    public Color corFundo1 = new Color(27, 38, 44); // definindo a cor de fundo em um objeto
+    // Cores utilizadas
+    public Color corFundo1 = new Color(27, 38, 44);
     public Color corPanel = new Color(15, 76, 117);
-    public Color corLabel1 = new Color(187, 225, 250); // definindo a cor de fundo em um objeto
+    public Color corLabel1 = new Color(187, 225, 250);
     public Color corLabel2 = new Color(200, 200, 200);
-    public Color branco = new Color(255,255,255);
+    public Color branco = new Color(255, 255, 255);
+
+    // Ícones e cores
     public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
     public ImageIcon iconCancel = new ImageIcon("Images/cancel2.png");
     public ImageIcon iconEnviar = new ImageIcon("Images/enviar-bd.png");
 
-
     private ClientePJ cliente;
     private boolean isSaved;
     private DAOCliPj dao;
-    
+
     public String antigoCnpj;
 
     // Campos de texto para os atributos do ClientePJ
@@ -54,16 +56,18 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
         getContentPane().setBackground(corFundo1);
         setSize(400, 300);
 
+        // Label de desenvolvedores
         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);
-        devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs.setFont(new Font("Arial", Font.ITALIC, 9));
         devs.setBounds(40, 286, 1000, 100);
         devs.setVisible(true);
         this.add(devs);
 
+        // Label de desenvolvedores (continuação)
         JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
         devs2.setForeground(corLabel2);
-        devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs2.setFont(new Font("Arial", Font.ITALIC, 9));
         devs2.setBounds(120, 295, 1000, 100);
         devs2.setVisible(true);
         this.add(devs2);
@@ -124,27 +128,27 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
         // Botões
         btnSalvar = new JButton("Salvar");
         btnSalvar.setBounds(214, 190, 115, 30);
-        btnSalvar.setBackground(new Color(6,185,57));
+        btnSalvar.setBackground(new Color(6, 185, 57));
         btnSalvar.addActionListener(this);
         btnSalvar.setIcon(iconEnviar);
         add(btnSalvar);
 
         btnCancelar = new JButton("");
-        btnCancelar.setBounds(170, 190, 40 ,30);
+        btnCancelar.setBounds(170, 190, 40, 30);
         btnCancelar.setIcon(iconCancel);
-        btnCancelar.setBackground(new Color(245,250,250));
+        btnCancelar.setBackground(new Color(245, 250, 250));
         btnCancelar.addActionListener(this);
         add(btnCancelar);
     }
-    
+
+    // Obtém os valores dos campos de texto e atualiza o cliente
     public ClientePJ getCliente() {
-        
         cliente.setRazao(tfRazao.getText());
         cliente.setCnpj(tfCnpj.getText());
         cliente.setEmail(tfEmail.getText());
         cliente.setContato(tfContato.getText());
         cliente.setResponsavel(tfResponsavel.getText());
-        
+
         return cliente;
     }
 
@@ -155,6 +159,7 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSalvar) {
+            // Obtém o cliente alterado e o salva no banco de dados
             ClientePJ clienteAlterado = getCliente();
             dao.altera(clienteAlterado, antigoCnpj);
             isSaved = true;
@@ -163,5 +168,4 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
             dispose();
         }
     }
-
 }
