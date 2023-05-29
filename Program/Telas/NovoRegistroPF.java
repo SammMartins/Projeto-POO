@@ -29,6 +29,7 @@ public class NovoRegistroPF extends Tela implements ActionListener {
 
     public NovoRegistroPF() {
         setTitle("Gerenciar Pessoa Física");
+        setResizable(false);
         setIconImage(icone.getImage());
         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);

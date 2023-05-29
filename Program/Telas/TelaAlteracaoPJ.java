@@ -47,6 +47,7 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
         // Configurações do JFrame
         setTitle("Alterar Cliente PJ");
         setIconImage(icone.getImage());
+        setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
@@ -122,14 +123,14 @@ public class TelaAlteracaoPJ extends JFrame implements ActionListener {
 
         // Botões
         btnSalvar = new JButton("Salvar");
-        btnSalvar.setBounds(215, 190, 115, 30);
+        btnSalvar.setBounds(214, 190, 115, 30);
         btnSalvar.setBackground(new Color(6,185,57));
         btnSalvar.addActionListener(this);
         btnSalvar.setIcon(iconEnviar);
         add(btnSalvar);
 
         btnCancelar = new JButton("");
-        btnCancelar.setBounds(30, 190, 40 ,30);
+        btnCancelar.setBounds(170, 190, 40 ,30);
         btnCancelar.setIcon(iconCancel);
         btnCancelar.setBackground(new Color(245,250,250));
         btnCancelar.addActionListener(this);

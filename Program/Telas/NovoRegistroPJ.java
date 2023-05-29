@@ -26,6 +26,7 @@ public class NovoRegistroPJ extends Tela implements ActionListener {
         public NovoRegistroPJ() {
                 this.setTitle("Cadastro Pessoa Jurídica");
                 setIconImage(icone.getImage());
+                setResizable(false);
                 
                 JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
                 devs.setForeground(corLabel2);

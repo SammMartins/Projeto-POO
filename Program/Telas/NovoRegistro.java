@@ -15,6 +15,7 @@ public class NovoRegistro extends Tela implements ActionListener{
         setTitle("Gerenciar Clientes");
         setIconImage(icone.getImage());
         setLocationRelativeTo(null);
+        setResizable(false);
 
         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
         devs.setForeground(corLabel2);

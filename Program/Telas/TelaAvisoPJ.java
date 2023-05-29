@@ -34,6 +34,7 @@ public class TelaAvisoPJ extends JFrame implements ActionListener {
     public TelaAvisoPJ(ClientePJ pj) {
         setTitle("Confirmação");
         setIconImage(icone.getImage());
+        setResizable(false);
         setVisible(true); 
         setSize(300, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

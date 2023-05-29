@@ -15,6 +15,7 @@ public class Manuntencao extends Tela implements ActionListener {
         setTitle("Tela de Manutenção");
         setIconImage(icone.getImage());
         setLocationRelativeTo(null);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");

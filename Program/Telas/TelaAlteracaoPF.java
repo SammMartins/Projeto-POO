@@ -6,6 +6,7 @@ import Program.ConexãoBD.DAOCliPf;
 import javax.swing.*;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,6 +15,11 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
     public Color corPanel = new Color(15, 76, 117);
     public Color corLabel1 = new Color(187, 225, 250); // definindo a cor de fundo em um objeto
     public Color corLabel2 = new Color(200, 200, 200);
+
+    public ImageIcon icone = new ImageIcon("Images/iconePrincipal.png");
+    public ImageIcon iconCancel = new ImageIcon("Images/cancel2.png");
+    public ImageIcon iconEnviar = new ImageIcon("Images/enviar-bd.png");
+    public Color branco = new Color(255,255,255);
 
     private ClientePF cliente;
     private boolean isSaved;
@@ -42,21 +48,45 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
         setTitle("Alterar Cliente PF");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        setResizable(false);
         setLayout(null);
         getContentPane().setBackground(corFundo1);
         setSize(400, 300);
 
+        JLabel devs = new JLabel("Desenvolvido por: Bruno Cardoso Monteiro, Caio Chaves Lima, José Carlos Neto Soares Dantas, ");
+        devs.setForeground(corLabel2);
+        devs.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs.setBounds(40, 286, 1000, 100);
+        devs.setVisible(true);
+        this.add(devs);
+
+        JLabel devs2 = new JLabel("Rafael Rodrigues Souza, Sammuel Gusmão Martins - UniFTC");
+        devs2.setForeground(corLabel2);
+        devs2.setFont(new Font("Arial", Font.ITALIC, 9 ));
+        devs2.setBounds(120, 295, 1000, 100);
+        devs2.setVisible(true);
+        this.add(devs2);
+
+        JPanel panel2 = new JPanel();
+        panel2.setBackground(new Color(31, 42, 51));
+        panel2.setVisible(true);
+        panel2.setBounds(0, 320, 1000, 40);
+        this.add(panel2);
+
         // Labels
         JLabel lblNome = new JLabel("Nome:");
+        lblNome.setForeground(branco);
         lblNome.setBounds(20, 20, 100, 20);
         add(lblNome);
 
         JLabel lblCpf = new JLabel("CPF:");
+        lblCpf.setForeground(branco);
         lblCpf.setBounds(20, 50, 100, 20);
         add(lblCpf);
 
 
         JLabel lblContato = new JLabel("Contato:");
+        lblContato.setForeground(branco);
         lblContato.setBounds(20, 80, 100, 20);
         add(lblContato);
 
@@ -78,12 +108,16 @@ public class TelaAlteracaoPF extends JFrame implements ActionListener {
 
         // Botões
         btnSalvar = new JButton("Salvar");
-        btnSalvar.setBounds(120, 190, 80, 30);
+        btnSalvar.setBounds(214, 190, 115, 30);
+        btnSalvar.setBackground(new Color(6,185,57));
         btnSalvar.addActionListener(this);
+        btnSalvar.setIcon(iconEnviar);
         add(btnSalvar);
 
-        btnCancelar = new JButton("Cancelar");
-        btnCancelar.setBounds(220, 190, 100, 30);
+        btnCancelar = new JButton("");
+        btnCancelar.setBounds(170, 190, 40 ,30);
+        btnCancelar.setIcon(iconCancel);
+        btnCancelar.setBackground(new Color(245,250,250));
         btnCancelar.addActionListener(this);
         add(btnCancelar);
     }
