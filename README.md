@@ -1,6 +1,6 @@
 # Sistema de Cadastro de Clientes
 ## Projeto em Java com orientação a objeto e Interface Gráfica
-### Projeto criado durante a matéria de Programação Orientada a Objeto no Bacharelado em Sistema de Informação.
+Projeto criado durante a matéria de Programação Orientada a Objeto no Bacharelado em Sistema de Informação.
 ---------------------------------------------------------------------------------------------------------------
 ### Sobre nosso Projeto:
 O projeto consiste em um sistema gerenciador de clientes. Possui opção de cadastro separando por Cliente pessoa física ou pessoa jurídica.
