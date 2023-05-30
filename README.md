@@ -9,9 +9,9 @@
 ---------------------------------------------------------------------------------------------------------------
 
 ####    Desenvolvedores: 
-[Rafael Rodrigues Souza](https://github.com/RafGuiro)
-[José Carlos Neto Soares Dantas](https://github.com/JoseCarlosNSD)
-[Bruno Cardoso Monteiro](https://github.com/brunocardsx)
-[Sammuel Gusmão Martins](https://github.com/SammMartins)
+[Rafael Rodrigues Souza](https://github.com/RafGuiro) / 
+[José Carlos Neto Soares Dantas](https://github.com/JoseCarlosNSD) / 
+[Bruno Cardoso Monteiro](https://github.com/brunocardsx) / 
+[Sammuel Gusmão Martins](https://github.com/SammMartins) / 
 [Caio Chaves Lima](https://github.com/CaioCL1)
 
