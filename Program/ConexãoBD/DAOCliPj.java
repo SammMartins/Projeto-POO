@@ -8,8 +8,7 @@ public class DAOCliPj {
     private Connection conexao;
 
     public DAOCliPj() {
-        conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", "bd_poo_ftc", "bcjrs_2023",
-                "Poo@2023");
+        conexao = (Connection) new FabricaDeConexoes().solicitaConexao //senha retirada por privacidade
     }
 
     public void insert(ClientePJ pj) {
