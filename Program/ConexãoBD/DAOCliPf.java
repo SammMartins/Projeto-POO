@@ -8,7 +8,8 @@ public class DAOCliPf {
     private Connection conexao;
 
     public DAOCliPf() {
-        conexao = (Connection) new FabricaDeConexoes().solicitaConexao //senha retirada por privacidade
+        conexao = (Connection) new FabricaDeConexoes().solicitaConexao("db4free.net:3306", 
+        "bd_poo_ftc", "bcjrs_2023","Poo@2023");
     }
     public void insert(ClientePF c) {
         String sql = "INSERT INTO clipf" +
