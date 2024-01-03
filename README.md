@@ -1,6 +1,6 @@
 #     Sistema de Cadastro e Gerenciamento de Clientes
 ###   Projeto em Java com orientação a objeto e Interfaces Gráficas
-##### ¬ Programa criado durante a matéria de Programação Orientada a Objeto no Bacharelado em Sistema de Informação na UNIFTC (Vitória da Conquista).
+##### ¬ Programa criado durante a matéria de Programação Orientada a Objeto no Bacharelado em Sistema de Informação.
 
 ---------------------------------------------------------------------------------------------------------------
 
